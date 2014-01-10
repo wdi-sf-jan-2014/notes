@@ -7,11 +7,15 @@ A repository for lecture notes and gists
 
 ### By topic
 
+[The Command Line](living_in_the_command_line.md)
+
 [File IO, arrays, hashes](file_io_arrays_hashes/file_io_arrays_hashes.md)
 
 [Debugging](debugging_exceptions/debugging.md)
 
 ### By date
+
+[Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
 
 [Tuesday, Jan 7, 2014, Afternoon](file_io_arrays_hashes/)
 
