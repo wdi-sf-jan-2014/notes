@@ -293,79 +293,12 @@ end
 
 In other words `for..in` is *not* a loop, it's an alias for `.each`.
 
-Using one built in loop, a temporary variable, `Array#size`, `yield`, and no other iterators, your mission is to implement `SortedArray#each`. `SortedArray#each` needs to return the original array untouched.
+## Exercises
 
-Demonstrate that `SortedArray < Array` uses `SortedArray#each` rather than `Array#each`.
+* Using one built in loop, a temporary variable, `Array#size`, `yield`, and no other iterators, your mission is to implement `SortedArray#each`. `SortedArray#each` needs to return the original array untouched. Demonstrate that `SortedArray < Array` uses `SortedArray#each` rather than `Array#each`.
 
-```
-class SortedArray < Array
-	def each &block
-		# counter for retrieving array elements
-		i = 0
-		# use a built in loop, terminating condition is array size
-		until i == size
-			# invoke the block, passing the value at the current index
-			yield self[i]
-			# increment i to the next index
-			i += 1
-		end
-		
-		# return the array back		
-		self
-	end
-end
-```
+* When you are done, implement `SortedArray#map` on top of your shiny new `SortedArray#each` method. Again, demonstrate that `SortedArray < Array` uses `SortedArray#map` rather than `Array#map`. Keep in mind, that `SortedArray#map` should not modify the original array! Hint: Check out the `dup` method to figure out how to clone an existing array. Demonstrate that you've not modified the original array!
 
-When you are done, implement `SortedArray#map` on top of your shiny new `SortedArray#each` method. Again, demonstrate that `SortedArray < Array` uses `SortedArray#map` rather than `Array#map`. Keep in mind, that `SortedArray#map` should not modify the original array! Hint: Check out the `dup` method to figure out how to clone an existing array. Demonstrate that you've not modified the original array!
+* Implement `SortedArray#map!`, which modifies the original array.
 
-```
-class SortedArray < Array
-	def each &block
-		puts "in SortedArray#each"
-		# counter for retrieving array elements
-		i = 0
-		# use a built in loop, terminating condition is array size
-		until i == size
-			# invoke the block, passing the value at the current index
-			yield self[i]
-			# increment i to the next index
-			i += 1
-		end
-		
-		# return the array back
-		self
-	end
-	
-	def map &block
-		puts "in SortedArray#map"
-		# gotta keep track of the elements
-		i = 0
-		# cloned array
-		clone = self.dup
-		# use each to iterate
-		clone.each do |el|
-			# replace element at current position after invoking block on it
-			clone[i] = yield el
-			# increment the position
-			i += 1
-		end 
-		# return the cloned array back
-		clone
-	end
-end
-```
-
-Implement `SortedArray#map!`, which modifies the original array.
-
-Implement `SortedArray#find`, which finds an element. The method should return `nil`.
-
-```
-class SortedArray < Array
-	def find
-		each do |value|
-			return value if yield(value)
-		end
-		nil
-	end
-end
-```
+* Implement `SortedArray#find`, which finds an element. The method should return `nil`.
