@@ -66,6 +66,64 @@ example
 
 ```
 
+### Let's dig into Proc
+
+So we already understand that blocks can be objects from the example above.
+
+Given what you saw, it should come as no surprise that you may:
+
+* Store blocks in variables
+* Pass blocks around
+* Invoke the blocks' code later
+
+Let's create a `Proc` object in one method, return it, and pass it into another method. Whoah.
+	
+```
+def pass_block &block
+	block
+end
+
+my_proc = pass_block { |name| puts "Hello, #{name}" }
+
+my_proc.call "Alex"
+```	
+
+The `call` method invokes the code in the original block.
+
+Let's try to pass in another argument to `my_proc`:
+
+```
+my_proc.call "Jane"
+```
+
+Pretty freaking neat-o.
+
+### This brings us to another common point of confusion: `lambda`.
+
+It's just a ruby built in method that returns a Proc. 
+
+Check it out: 
+```
+my_lambda = lambda { |name| puts "Hello, #{name} from a lambda!" }
+```
+
+But, it provides something else that's very cool.
+
+Procs returned by `lambda` check whether the number of arguments passed in (arity) is satisfied. 
+
+Let's try it, both with our 'ole `my_proc` and our shiny new `my_lambda`:
+
+```
+my_lambda.call
+# ArgumentError: wrong number of arguments (0 for 1)
+# from (pry):353:in `block in __pry__'
+
+my_proc.call
+# Hello,
+```
+
+### Some cautionary points
+
 * Be **very careful** when not using parentheses and passing in blocks!
 	* Order of operations!
 		* Braces have high precedence
@@ -297,4 +355,17 @@ class SortedArray < Array
 end
 ```
 
-If you are really fancy, implement `SortedArray#inject`. The same rules apply.
+Implement `SortedArray#map!`, which modifies the original array.
+
+Implement `SortedArray#find`, which finds an element. The method should return `nil`.
+
+```
+class SortedArray < Array
+	def find
+		each do |value|
+			return value if yield(value)
+		end
+		nil
+	end
+end
+```
