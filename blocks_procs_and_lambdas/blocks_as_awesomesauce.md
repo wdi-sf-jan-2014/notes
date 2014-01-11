@@ -127,7 +127,7 @@ Let's take another look at one of the previous examples:
 
 ```
 a = [1, 2, 3, 4]
-for i in 0..a.length
+for i in 0..a.size
 	puts "#{a[i]}"
 end
 ```
@@ -219,21 +219,33 @@ So, let's take a quick peek at that old example again:
 
 ```
 a = [1, 2, 3, 4]
-for i in 0..a.length
+for i in 0..a.size
 	puts "#{a[i]}"
 end
 ```
 
 This translates roughly to:
 ```
-
+[1, 2, 3, 4].each do |value|
+	puts value
+end
 ```
 
+In other words `for..in` is *not* a loop, it's an alias for `.each`.
+
+Using one built in loop, a temporary variable, `Array.size`, `yield`, and no other iterators, your mission is to implement `SortableArray.each`. `SortableArray.each` needs to return the original array untouched.
 
 ```
 class SortableArray < Array
 	def each &block
-		
+		# counter for retrieving array elements
+		i = 0
+		# use a built in loop
+		until i == self.size
+			yield self[i]
+			i += 1
+		end
+		self
 	end
 end
 ```
