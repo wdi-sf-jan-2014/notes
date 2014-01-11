@@ -19,9 +19,9 @@ However, to understand how to use `Array` and `Hash` like Jedis, we really have 
 ## Goals
 
 ### Grok block semantics really well
-### Grok how `Array.each` and other iterators work under the hood
+### Grok how `Array#each` and other iterators work under the hood
 
-## A deep look at `Array.each`
+## A deep look at `Array#each`
 
 ###Syntax and rules
 
@@ -71,7 +71,7 @@ example
 		* Braces have high precedence
 		* do/end has low precedence	
 
-Let's use `Array.map` for this example:
+Let's use `Array#map` for this example:
 	
 ```
 # low precedence
@@ -117,11 +117,11 @@ musicians_with_genres = {
 }
 ```
 
-Write two examples with iterators other than `Array.map` and `Array.each` that demonstrate the problem and unintended consequences of low precedence vs. high precedence when using do/end instead of braces when passing blocks to the iterators.
+Write two examples with iterators other than `Array#map` and `Array#each` that demonstrate the problem and unintended consequences of low precedence vs. high precedence when using do/end instead of braces when passing blocks to the iterators.
 
-### What's really happening when we use `Array.each`?
+### What's really happening when we use `Array#each`?
 
-We've been having a lot of fun with iterators... ruby methods like `Array.each`, `Array.map`, `Hash.each_with_index`, and others. Let's dig deeper and understand how they work under the covers, by examining `Array.each`.
+We've been having a lot of fun with iterators... ruby methods like `Array#each`, `Array#map`, `Hash.each_with_index`, and others. Let's dig deeper and understand how they work under the covers, by examining `Array#each`.
 
 Let's take another look at one of the previous examples:
 
@@ -156,7 +156,7 @@ a.each { |element| puts element }
 * The output is decoupled from the looping
 	* Changing this to do something else is absolutely trivial
 	
-#### The method `Array.each` is an iterator
+#### The method `Array#each` is an iterator
 
 An iterator is a method that invokes a block of code repeatedly (one or more times).
 
@@ -206,7 +206,7 @@ end
 decade { |year| puts "The year is #{year}" }
 ```
 
-#### To understand how Array.each works, let's implement it!
+#### To understand how Array#each works, let's implement it!
 
 We will do it on our `SortedArray` class from yesterday.
 
@@ -226,6 +226,7 @@ end
 ```
 
 This translates roughly to:
+
 ```
 [1, 2, 3, 4].each do |value|
 	puts value
@@ -234,7 +235,7 @@ end
 
 In other words `for..in` is *not* a loop, it's an alias for `.each`.
 
-Using one built in loop, a temporary variable, `Array.size`, `yield`, and no other iterators, your mission is to implement `SortedArray.each`. `SortedArray.each` needs to return the original array untouched.
+Using one built in loop, a temporary variable, `Array#size`, `yield`, and no other iterators, your mission is to implement `SortedArray#each`. `SortedArray#each` needs to return the original array untouched.
 
 ```
 class SortedArray < Array
@@ -252,3 +253,5 @@ class SortedArray < Array
 	end
 end
 ```
+
+When you are done, implement SortedArray.
