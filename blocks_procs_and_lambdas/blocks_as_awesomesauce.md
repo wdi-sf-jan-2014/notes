@@ -240,9 +240,11 @@ class SortableArray < Array
 	def each &block
 		# counter for retrieving array elements
 		i = 0
-		# use a built in loop
+		# use a built in loop, terminating condition is array size
 		until i == self.size
+			# invoke the block, passing the value at the current index
 			yield self[i]
+			# increment i to the next index
 			i += 1
 		end
 		self
