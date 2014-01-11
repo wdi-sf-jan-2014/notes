@@ -12,7 +12,7 @@ If you are a landlord, you want to manage a collection of apartment units inside
 
 We've been playing quite a bit with `Array` and `Hash`. Mastering these two extremely powerful ruby objects is essential to being an effective ruby programmer.
 
-However, to understand how to implement `Array` and `Hash` like Jedis, we really have to ***grok*** how blocks work.
+However, to understand how to use `Array` and `Hash` like Jedis, we really have to ***grok*** how blocks work.
 
 **Blocks, procs, and lambdas are ruby's most powerful and most misunderstood awesomesauce.**
 
@@ -152,6 +152,7 @@ a.each { |element| puts element }
 * Much more beautiful
 * It reads well
 * The "looping" is decoupled from the retrieval
+	* You don't have to think about what index you're on
 * The output is decoupled from the looping
 	* Changing this to do something else is absolutely trivial
 	
@@ -207,7 +208,7 @@ decade { |year| puts "The year is #{year}" }
 
 #### To understand how Array.each works, let's implement it!
 
-We will do it on our `SortableArray` class from yesterday.
+We will do it on our `SortedArray` class from yesterday.
 
 Before we do so, let me in on a secret:
 
@@ -233,10 +234,10 @@ end
 
 In other words `for..in` is *not* a loop, it's an alias for `.each`.
 
-Using one built in loop, a temporary variable, `Array.size`, `yield`, and no other iterators, your mission is to implement `SortableArray.each`. `SortableArray.each` needs to return the original array untouched.
+Using one built in loop, a temporary variable, `Array.size`, `yield`, and no other iterators, your mission is to implement `SortedArray.each`. `SortedArray.each` needs to return the original array untouched.
 
 ```
-class SortableArray < Array
+class SortedArray < Array
 	def each &block
 		# counter for retrieving array elements
 		i = 0
