@@ -4,6 +4,8 @@ This is ruby's most powerful and most misunderstood awesomesauce.
 
 ## A deep look at `Array.each`
 
+###Syntax and rules
+
 ```
 a = [1, 2, 3, 4]
 
@@ -45,6 +47,7 @@ example
 
 ```
 
-
 ### What's happening when we use `Array.each`?
+
+
 
