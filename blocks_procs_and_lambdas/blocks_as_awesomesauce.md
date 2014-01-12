@@ -349,3 +349,9 @@ In other words `for..in` is *not* a loop, it's an alias for `.each`.
 * Implement `SortedArray#map!`, which modifies the original array.
 
 * Implement `SortedArray#find`, which finds an element. The method should return `nil`.
+
+## Additional reading
+
+* [Understanding Ruby blocks, Procs, and methods](http://eli.thegreenplace.net/2006/04/18/understanding-ruby-blocks-procs-and-methods/)
+* [Ruby & (Ampersand) Parameter Demystified](http://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/)
+* [Going crazy with to_proc](http://iain.nl/going-crazy-with-to_proc)
