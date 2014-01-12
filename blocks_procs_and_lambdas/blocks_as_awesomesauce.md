@@ -65,16 +65,27 @@ example { "a block" }
 example
 
 ```
+###Btw
+
+Blocks may be passed into a ruby method implicitly. You don't need to specify a `&block` argument when you define your method. You just don't get the named `block` in your method. You may still invoke the block's code via `yield`.
+
+```
+def example
+	yield if block_given?	
+end
+```
+
+We'll get back to `yield` very shortly.
 
 ### Let's dig into Proc
 
-So we already understand that blocks can be objects from the example above.
+So we already understand that blocks are objects from the example above.
 
 Given what you saw, it should come as no surprise that you may:
 
-* Store blocks in variables
+* Store references to blocks in variables
 * Pass blocks around
-* Invoke the blocks' code later
+* Invoke blocks' code later
 
 Let's create a `Proc` object in one method, return it, and pass it into another method. Whoah.
 	
@@ -120,6 +131,42 @@ my_lambda.call
 
 my_proc.call
 # Hello,
+```
+
+### More on Proc
+
+What does this do?
+
+```
+[1, 2, 3, 4].inject(:+)
+```
+
+The same as:
+
+```
+[1, 2, 3, 4].inject { |acc, value| acc + value }
+```
+
+Whoah... right?!
+
+Why?
+
+A combination of `Symbol.to_proc` and `Object#send` is why.
+
+```
+class Symbol
+	def to_proc
+		Proc.new { |obj, *args| obj.send(self, *args) }
+	end
+end
+
+# check it out, how this breaks down... 
+
+[1, 2, 3, 4].inject { |obj, *args| obj.send(:+, *args) }
+# or
+[1, 2, 3, 4].inject { |acc, value| acc.send(:+, value) }
+# or
+[1, 2, 3, 4].inject { |acc, value| acc + value }
 ```
 
 ### Some cautionary points
@@ -175,7 +222,7 @@ musicians_with_genres = {
 }
 ```
 
-Write two examples with iterators other than `Array#map` and `Array#each` that demonstrate the problem and unintended consequences of low precedence vs. high precedence when using do/end instead of braces when passing blocks to the iterators.
+Write two examples with iterators other than `Hash#map` and `Hash#each` that demonstrate the problem and unintended consequences of low precedence vs. high precedence when using do/end instead of braces when passing blocks to the iterators.
 
 ### What's really happening when we use `Array#each`?
 
