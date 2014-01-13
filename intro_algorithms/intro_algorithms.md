@@ -15,6 +15,8 @@ Instead, __try to understand the program you have written__.  If you understand 
 ### Read the variable scope tutorial I sent out on Hipchat yesterday:
 [http://zetcode.com/lang/rubytutorial/variables/](http://zetcode.com/lang/rubytutorial/variables/)
 
+If you have trouble understanding it, keep re-reading it and talk to your classmates about it.
+
 ### Commit More
 You can `git commit` even if you're not connected to the internet.  I want you to commit whenever you feel like you have accomplished anything.  If you write out pseudocode in comments, commit that.
 
@@ -72,24 +74,7 @@ As you can see in search_bench.csv, as the running time of Array#index increases
 
 This difference is tremendous.  If you go from 10,000 users to 1,000,000 users, and pages on your site examine every user record to render the page, the increase in users could cause that search to take 100 times longer if it is linear.  In log time, log2(10000) is about 13, and log2(1000000) is about 20.  The difference will probably be insignificant.
 
-This concern with the running time of algorithms on large amounts of input is concern about the relative __Asymptotic Complexity__ of the two algorithms.  We say that binary search has __O(log(N))__ complexity, while linear search has __O(N)__ complexity.
-
-This _Big O_ notation is used to talk about the worst case running time of an algorithm.  For large N, linear search takes time proportionate to the size of the data, while binary search takes time proportionate to the log of the size of the data.
-
-We usually build a Big O expression by figuring out the running time of the algorithm we are examining as best we can in terms of the size of the data, then picking the terms that will dominate the expression.  
-
-Consider the following algorithm for linear search:
-
-```
-for index in 0...array.size
-	return index if array[index] == target
-end
-return false
-```
-
-Every time we do a comparison we count that as 1 operation, then since that comparison is in a loop which might run N times, we multiply that 1 operation by N.  O(N).
-
-What is the asymptotic complexity of BubbleSort?
+This concern with the running time of algorithms on large amounts of input is concern about the relative __Asymptotic Complexity__ of the two algorithms.  
 
 ### Merge Sort
 Consider this method of sorting an array:
