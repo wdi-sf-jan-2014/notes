@@ -111,3 +111,5 @@ Today's lab will be about the problem of inserting into a sorted array.  How can
 [Harvard CS 50's Introduction to Algorithms](https://www.youtube.com/watch?v=MwFMs9GQMGY&list=PLF8A834F810575A94&index=7)
 
 [Animations of Sorting Algorithms](http://www.sorting-algorithms.com/)
+
+[Big O Cheatsheet](http://bigocheatsheet.com/)
