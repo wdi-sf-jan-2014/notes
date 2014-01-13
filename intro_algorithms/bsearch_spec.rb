@@ -17,11 +17,11 @@ describe 'Recursive Binary Search' do
     @sorted_array[ind].should == target
   end
 
-  it 'should return -1 on a non-element' do
-    binary_search(@sorted_array, 20).should == -1
+  it 'should return nil on a non-element' do
+    binary_search(@sorted_array, 20).should == nil
   end
   it 'excludes end_ind' do
-    binary_search(@sorted_array, @sorted_array[10], 0, 10).should == -1
+    binary_search(@sorted_array, @sorted_array[10], 0, 10).should == nil
   end
   it 'includes start_ind' do
     binary_search(@sorted_array, @sorted_array[5], 5, 10).should == 5
@@ -44,11 +44,11 @@ describe 'Looping Binary Search' do
     @sorted_array[ind].should == target
   end
 
-  it 'should return -1 on a non-element' do
-    binary_search_loop(@sorted_array, 20).should == -1
+  it 'should return nil on a non-element' do
+    binary_search_loop(@sorted_array, 20).should == nil
   end
   it 'excludes end_ind' do
-    binary_search_loop(@sorted_array, @sorted_array[10], 0, 10).should == -1
+    binary_search_loop(@sorted_array, @sorted_array[10], 0, 10).should == nil
   end
   it 'includes start_ind' do
     binary_search_loop(@sorted_array, @sorted_array[5], 5, 10).should == 5
