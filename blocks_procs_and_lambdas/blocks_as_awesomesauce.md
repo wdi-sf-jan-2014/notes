@@ -342,9 +342,9 @@ In other words `for..in` is *not* a loop, it's an alias for `.each`.
 
 ## Exercises
 
-* Using one built in loop, a temporary variable, `Array#size`, `yield`, and no other iterators, your mission is to implement `SortedArray#each`. `SortedArray#each` needs to return the original array untouched. Demonstrate that `SortedArray < Array` uses `SortedArray#each` rather than `Array#each`.
+* Using one built in loop, a temporary variable, `Array#size`, `yield`, and no other iterators, your mission is to implement `SortedArray#each`. `SortedArray#each` needs to return the original array untouched. 
 
-* When you are done, implement `SortedArray#map` on top of your shiny new `SortedArray#each` method. Again, demonstrate that `SortedArray < Array` uses `SortedArray#map` rather than `Array#map`. Keep in mind, that `SortedArray#map` should not modify the original array! Hint: Check out the `dup` method to figure out how to clone an existing array. Demonstrate that you've not modified the original array!
+* When you are done, implement `SortedArray#map` on top of your shiny new `SortedArray#each` method. Keep in mind, that `SortedArray#map` should not modify the original array! Hint: Check out the `dup` method to figure out how to clone an existing array. 
 
 * Implement `SortedArray#map!`, which modifies the original array.
 
