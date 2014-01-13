@@ -36,7 +36,7 @@ Precision is what makes an algorithm more useful than an idea for solving a prob
 With a precise problem, which means a precise specification for the input and a precise specification for the input, we can plan our code effectively.  We will use RSpec this afternoon to help us write these precise specifications for our input and our output.  Executable testing like RSpec doesn't replace focused reasoning and creativity, but it does make it easier.
 
 ## Searching a Sorted Array
-This morning you implemented BubbleSort.  We're now going to talk about precisely why having a sorted list is more useful than having an unsorted list.
+Ruby supplies us with a built in Array#sort method.  We're now going to talk about precisely why having a sorted list is more useful than having an unsorted list.
 
 Given an unsorted list of strings, how can we get the location of a particular string?  We have to search linearly through the list.  If the list doubles in length, we might have to look at twice as many strings.
 
