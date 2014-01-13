@@ -1,4 +1,4 @@
-class SortedArray < Array
+class SortedArray
   def each &block
     puts "in SortedArray#each"
     # counter for retrieving array elements
