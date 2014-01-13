@@ -8,7 +8,7 @@ A frequent reaction to problems in your code:
 ###this is ridiculous
 ###how do i even debug this
 
-We see that our program has bugs and maybe errors and we try to understand why it is not the program we wanted.
+You see that your program has bugs and maybe errors and you try to understand why it is not the program you wanted.
 
 Instead, __try to understand the program you have written__.  If you understand why your program behaves in a way that you didn't expect, then you know how to change it.
 
@@ -20,12 +20,18 @@ You can `git commit` even if you're not connected to the internet.  I want you t
 
 ## Agenda
 
+1. What is an Algorithm?
 1. Searching Sorted Arrays
 1. Benchmarking Linear VS Binary Search
 1. Merge Sort
 1. Benchmarking the sorts
 1. Inserting into a Sorted Array
 
+## What is an Algorithm
+An algorithm is a precisely defined process for solving a problem.
+It is a concept which can be turned into code.
+Precision is what makes an algorithm more useful than an idea for solving a problem.
+With a precise problem, which means a precise specification for the input and a precise specification for the input, we can plan our code effectively.  We will use RSpec this afternoon to help us write these precise specifications for our input and our output.  Executable testing like RSpec doesn't replace focused reasoning and creativity, but it does make it easier.
 
 ## Searching a Sorted Array
 This morning you implemented BubbleSort.  We're now going to talk about precisely why having a sorted list is more useful than having an unsorted list.
@@ -60,7 +66,7 @@ end
 average_time = total_elapsed_time/100
 ```
 
-I do this with in search_bench.rb, and have results in search_bench.csv.
+I do this in search_bench.rb, and have results in search_bench.csv.
 
 As you can see in search_bench.csv, as the running time of Array#index increases linearly with the size of the array, the running time of our binary search function hardly increases at all.  In fact, it is increasing.  If linear search and binary search took the same amount of time to search an array of N integers, then it would roughly take binary search the same amount of time to search an array of 2*N integers as it would for linear search to search N+1 integers.  
 
@@ -69,6 +75,19 @@ This difference is tremendous.  If you go from 10,000 users to 1,000,000 users, 
 This concern with the running time of algorithms on large amounts of input is concern about the relative __Asymptotic Complexity__ of the two algorithms.  We say that binary search has __O(log(N))__ complexity, while linear search has __O(N)__ complexity.
 
 This _Big O_ notation is used to talk about the worst case running time of an algorithm.  For large N, linear search takes time proportionate to the size of the data, while binary search takes time proportionate to the log of the size of the data.
+
+We usually build a Big O expression by figuring out the running time of the algorithm we are examining as best we can in terms of the size of the data, then picking the terms that will dominate the expression.  
+
+Consider the following algorithm for linear search:
+
+```
+for index in 0...array.size
+	return index if array[index] == target
+end
+return false
+```
+
+Every time we do a comparison we count that as 1 operation, then since that comparison is in a loop which might run N times, we multiply that 1 operation by N.  O(N).
 
 What is the asymptotic complexity of BubbleSort?
 
