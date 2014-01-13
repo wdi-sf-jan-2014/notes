@@ -42,9 +42,35 @@ Given an unsorted list of strings, how can we get the location of a particular s
 
 Given an alphabetically sorted list of strings, what can we do? If we compare the middle element to our target, we can halve the section of the list which we are searching.  This process is called a __binary search__, because it divides the problem by 2 with every comparison.
 
-We will write pseudocode for two ways of implementing binary search as a class, a recursive way, and a looping way.
+Pseudocode:
 
-Then you will implement both.
+```
+BINARY_SEARCH(ARRAY, TARGET, START_INDEX, END_INDEX)
+	If START_INDEX and END_INDEX were not supplied
+		Let START_INDEX be 0 and let END_INDEX be ARRAY.length
+	
+  # Calculate the halfway point
+  MID_INDEX = (START_INDEX + END_INDEX)/2
+
+  # Get the halfway element
+  MID_ELEMENT = ARRAY[MID_INDEX]
+
+  # Is the target right in the middle?
+  If MID_ELEMENT == TARGET
+    Return MID_INDEX
+  Otherwise If START_INDEX >= END_INDEX
+  	  Return False as TARGET is not in ARRAY
+  Otherwise If MID_ELEMENT > TARGET
+    # Since the middle element is > than the target
+    # We know the target is in the left half of the search space
+    Return BINARY_SEARCH(ARRAY, TARGET, START_INDEX, MID_INDEX)
+  Otherwise If MID_ELEMENT < TARGET
+    # Since the middle element is < than the target
+    # We know the target is in the right half of the search space
+    Return BINARY_SEARCH(ARRAY, TARGET, MID_INDEX + 1, END_INDEX)
+```
+
+A Ruby implementation is available in bsearch.rb, with a spec in bsearch_spec.rb.
 
 ## Linear VS Binary Search: Asymptotic Complexity
 Benchmarking is the process of recording how efficiently a piece of software executes.  We can benchmark code by recording the current time before the code we are interested in, executing our target code, then recording the new time.
@@ -105,6 +131,8 @@ Function Merge(FirstArray, SecondArray)
 This is an elegant and fairly simple sort, called MergeSort.  Implement it in groups.  If you finish, help your classmates get it.
 
 A real-world implementation of merge sort is more complicated, because we must re-use the array space that we start with to cut down on memory allocations.
+
+The completed implementation is available in bsearch.rb, with a spec in bsearch_spec.rb.
 
 ### Inserting into a Sorted Array
 
