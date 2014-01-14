@@ -137,15 +137,6 @@ my_proc.call
 Take a look at this example:
 
 ```
-[1] pry(main)> lambda { |x|
-[1] pry(main)*   lambda { |y| x }
-[1] pry(main)* }[1][2]
-=> 1
-```
-
-This is actually equivalent to this code:
-
-```
 lambda { |x| 
 	lambda { |y| x }
 }.call(1).call(2)
@@ -155,24 +146,24 @@ lambda { |x|
 
 First of all, scope.
 
-* What was the scope *before* we wrote the first line of code in this example?
-* What is the scope of the inner lambda? 
-* What is the scope of the outer lambda?
+* What was in scope *before* we wrote the first line of code in this example?
+* What is in scope in the outer lambda?
+* What is in scope in the inner lambda? 
 
 There's a name for `x` in the inner lambda.
-It's a "free" variable.
 
+It's a "free" variable - the lambda's argument list does not define it.
 `lambda { |y| x }` does not have an argument named x. 
 
 The variable `x` isn't bound in this function. 
 
-That's what makes it free.
+Functions and lambdas define variables that are "bound" to it via their argument lists.
 
-Functions and lambdas define variables that are "bound" to it.
-
-Lambdas, procs, and blocks create a new local variable scope. As do methods.
+Lambdas, procs, and blocks create a new variable scope. As do methods. This scope is local to its context.
 
 The beauty of lambda is that it allows you to create methods, the values and variables of which stay on livin' after the lambda returns. This is superbly powerful. This, combined with the ability to pass functions as objects are the two pre-requisites and properties of closures.
+
+
 
 A closure creates a new variable scope, whose variables and values are retained after the closure returns. 
 
