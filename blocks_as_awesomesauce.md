@@ -26,19 +26,19 @@ However, to understand how to use `Array` and `Hash` like Jedis, we really have 
 ###Syntax and rules
 
 ```
-a = [1, 2, 3, 4]
+arr = [1, 2, 3, 4]
 
 # syntax with braces
-a.each { |a| puts a }
+arr.each { |a| puts a }
 
 # syntax with do/end
-a.each do |a|
+arr.each do |a|
 	a *= 5
 	puts a
 end
 
 # useless syntax without an argument
-a.each { puts "kinda useless" }
+arr.each { puts "kinda useless" }
 
 ```
 
@@ -132,6 +132,79 @@ my_lambda.call
 my_proc.call
 # Hello,
 ```
+### And, bravely onto closures
+
+Take a look at this example:
+
+```
+[1] pry(main)> lambda { |x|
+[1] pry(main)*   lambda { |y| x }
+[1] pry(main)* }[1][2]
+=> 1
+```
+
+This is actually equivalent to this code:
+
+```
+lambda { |x| 
+	lambda { |y| x }
+}.call(1).call(2)
+```
+
+**What the f@ç$?**
+
+First of all, scope.
+
+* What was the scope *before* we wrote the first line of code in this example?
+* What is the scope of the inner lambda? 
+* What is the scope of the outer lambda?
+
+There's a name for `x` in the inner lambda.
+It's a "free" variable.
+
+`lambda { |y| x }` does not have an argument named x. 
+
+The variable `x` isn't bound in this function. 
+
+That's what makes it free.
+
+Functions and lambdas define variables that are "bound" to it.
+
+Lambdas, procs, and blocks create a new local variable scope. As do methods.
+
+The beauty of lambda is that it allows you to create methods, the values and variables of which stay on livin' after the lambda returns. This is superbly powerful. This, combined with the ability to pass functions as objects are the two pre-requisites and properties of closures.
+
+A closure creates a new variable scope, whose variables and values are retained after the closure returns. 
+
+Another way of saying is this is that a closure is a function that is said to be 'closed over' its free variables. Yet another way is that a closure is a function with free variables that are bound to their environment.
+
+Finally, there are two kinds of functions:
+
+* Functions containing no free variables: **pure functions**.
+
+Some pure functions in the form of lambdas:
+
+```
+lambda {}
+
+lambda { |x| x }
+
+lambda { |x| 
+	lambda { |y| x }
+}
+```
+
+The first function doesn’t have any variables, therefore doesn’t have any free variables. The second doesn’t have any free variables, because its only variable is bound. The third one is actually two functions, one in side the other. function (y) ... has a free variable, but the entire expression refers to function (x) ..., and it doesn’t have a free variable: The only variable anywhere in its body is x, which is certainly bound within function (x) ....
+
+From this, we learn something: A pure function can contain a closure.
+
+* Functions containing one or more free variables: **closures**.
+
+Understanding this is absolutely essential to really grokking blocks. Why? Because blocks are Procs/lambdas in disguise. So, they inherit that property very gracefully in that they inherit the variables of the scope in which they are used.
+
+### You do exercise (5m)
+
+If pure functions can contain closures, can a closure contain a pure function? Using only what we’ve learned so far, attempt to compose a closure that contains a pure function. If you can’t, give your reasoning for why it’s impossible.
 
 ### More on Proc
 
@@ -231,9 +304,9 @@ We've been having a lot of fun with iterators... ruby methods like `Array#each`,
 Let's take another look at one of the previous examples:
 
 ```
-a = [1, 2, 3, 4]
-for i in 0..a.size
-	puts "#{a[i]}"
+arr = [1, 2, 3, 4]
+for i in 0..arr.size
+	puts "#{arr[i]}"
 end
 ```
 
@@ -250,8 +323,8 @@ If we had a hash of hashes, things would get ugly quickly. We'd have to possibly
 Iterators to the rescue!
 
 ```
-a = [1, 2, 3, 4]
-a.each { |element| puts element }
+arr = [1, 2, 3, 4]
+arr.each { |element| puts element }
 ```
 
 * Much more beautiful
@@ -324,16 +397,16 @@ The only true built in ruby loop constructs are `while` and `until`.
 So, let's take a quick peek at that old example again:
 
 ```
-a = [1, 2, 3, 4]
-for i in 0..a.size
-	puts "#{a[i]}"
+arr = [1, 2, 3, 4]
+for i in 0..arr.size
+	puts "#{arr[i]}"
 end
 ```
 
 This translates roughly to:
 
 ```
-[1, 2, 3, 4].each do |value|
+arr.each do |value|
 	puts value
 end
 ```
