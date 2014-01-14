@@ -1,7 +1,7 @@
 
 def binary_search(arr, target, start_ind=0, end_ind=arr.length)
   # If start_ind > end_ind, the target can't be in the search space.
-  return -1 unless start_ind < end_ind
+  return nil unless start_ind < end_ind
 
   # Calculate the halfway point
   mid_ind = (end_ind-start_ind)/2 + start_ind
@@ -44,5 +44,5 @@ def binary_search_loop(arr, target, start_ind=0, end_ind=arr.length)
       start_ind = mid_ind + 1
     end
   end
-  return -1
+  return nil
 end
