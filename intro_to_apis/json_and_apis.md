@@ -11,8 +11,6 @@ An API is an application programming interface.
 ## Why APIs
 * Abstraction layer for making requests
 * Creates reusable functionality
-* 
-
 
 
 ## API Examples
