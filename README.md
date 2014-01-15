@@ -15,6 +15,8 @@ A repository for lecture notes and gists
 
 [Blocks, Proc, lambda](blocks_as_awesomesauce.md)
 
+[Intro to Internet and Web](intro_web/IntroToWeb.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -24,3 +26,5 @@ A repository for lecture notes and gists
 [Thursday, Jan 9, 2014, Afternoon](debugging_exceptions/)
 
 [Tuesday, Jan 14, 2014, Morning](blocks_as_awesomesauce.md)
+
+[Tuesday, Jan 14, 2014, Afternoon](intro_web/IntroToWeb.md)
