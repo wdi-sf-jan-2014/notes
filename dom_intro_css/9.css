@@ -1,0 +1,14 @@
+div {
+  color: blue;
+}
+#firstdiv { 
+  float: left;
+  margin-right: 40px;
+  color: #8A2908;
+}
+#firsth2 {
+  margin-top: 2px;
+}
+.blue-border{
+  	border: thick ridge blue;
+}
