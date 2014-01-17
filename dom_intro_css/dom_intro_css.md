@@ -347,3 +347,9 @@ Taming Lists:
 
 The Mozilla Developer Network:
 [https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)
+
+Colour Lovers, Palettes and Color Schemes:
+[http://www.colourlovers.com/](http://www.colourlovers.com/)
+
+FlatUI Colors:
+[http://flatuicolors.com/](http://flatuicolors.com/)

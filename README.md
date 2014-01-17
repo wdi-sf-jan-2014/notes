@@ -19,6 +19,8 @@ A repository for lecture notes and gists
 
 [JSON and APIs](intro_to_apis/json_and_apis.md)
 
+[HTML and CSS](dom_intro_css/dom_intro_css.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -32,3 +34,5 @@ A repository for lecture notes and gists
 [Tuesday, Jan 14, 2014, Afternoon](intro_web/IntroToWeb.md)
 
 [Tuesday, Jan 15, 2014, Afternoon](intro_to_apis/json_and_apis.md)
+
+[Thursday, Jan 16, 2014, Afternoon](dom_intro_css/dom_intro_css.md)
