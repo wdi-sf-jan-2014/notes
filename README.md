@@ -13,7 +13,11 @@ A repository for lecture notes and gists
 
 [Debugging](debugging_exceptions/debugging.md)
 
+[Methods & Blocks](methods_blocks/methods_&_blocks.md)
+
 [Blocks, Proc, lambda](blocks_as_awesomesauce.md)
+
+[Rspec Testing](rspec_testing/rspec_testing.md)
 
 [Intro to Internet and Web](intro_web/IntroToWeb.md)
 
@@ -27,7 +31,11 @@ A repository for lecture notes and gists
 
 [Tuesday, Jan 7, 2014, Afternoon](file_io_arrays_hashes/)
 
+[Wednesday, Jan 8, 2014, Morning](methods_blocks/)
+
 [Thursday, Jan 9, 2014, Afternoon](debugging_exceptions/)
+
+[Monday, Jan 13, 2014, Morning](RSpec testing/)
 
 [Tuesday, Jan 14, 2014, Morning](blocks_as_awesomesauce.md)
 
