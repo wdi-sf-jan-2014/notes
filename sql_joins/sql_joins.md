@@ -158,3 +158,8 @@ SELECT COUNT(e.id) AS reports_count, m.id, m.name
 
 This builds the join table from employees to employees, then aggregates the rows which have the same e.manager_id, m.id, and m.name.  Then it selects the number of rows aggregated and the id and name of the manager. 
 
+## Further Reading
+Some nice visuals of SQL Joins:
+
+[http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins](http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins)
+
