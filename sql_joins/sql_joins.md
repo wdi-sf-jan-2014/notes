@@ -17,7 +17,7 @@ Unless you buy it, it will occasionally make you wait 10 seconds.
 1. GROUP BY
 
 ## Relationships and Joins
-In your first SQL lesson you learned how to CREATE TABLE and DROP TABLE, perhaps how to ALTER TABLE, and how to do the four basic SQL operations: SELECT, INSERT, UPDATE, and DELETE.  With these features, we have what is essentially a spreadsheet, a spreadsheet which enforces constraints on the type of data in each column via the schema.  It's as if Excel could handle a million rows, but had no way of expressing the relationship between the items in one spreadsheet and another.
+In your first SQL lesson you learned how to CREATE TABLE and DROP TABLE, and how to do the four basic SQL operations: SELECT, INSERT, UPDATE, and DELETE.  With these features, we have what is essentially a spreadsheet, a spreadsheet which enforces constraints on the type of data in each column via the schema.  It's as if Excel could handle a million rows, but had no way of expressing the relationship between the items in one spreadsheet and another.
 
 Postgres and other SQL databases are __relational__.  They are designed for storing and viewing data that is interrelated.  To do this, one table has a __foreign key__ to another table.  If rows are related, one column in each row will have the same value.  Usually, a column in one row will contain the primary key of another row.
 
