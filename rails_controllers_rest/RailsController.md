@@ -187,7 +187,7 @@ Extend the movie app:
 ####add 'search' feature (that's not REST)
 
 - Add a new view with a search box (or incorporate into exiting view)
-- Add search method to movie controller
+- Add search method to movie controller, add route
 - Make OMDB API call retrieving movies
 - Add each movie to the movie_db, redirect to home page
 
