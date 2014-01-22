@@ -25,7 +25,9 @@ A repository for lecture notes and gists
 
 [HTML and CSS](dom_intro_css/dom_intro_css.md)
 
-[Rails Controller and REST] (rails_controllers_rest/RailsController.md)
+[Intro To Databases And SQL](intro_to_databases_sql/intro_to_dbs_and_sql.md)
+
+[Rails Controller and REST](rails_controllers_rest/RailsController.md)
 
 ### By date
 
@@ -47,5 +49,7 @@ A repository for lecture notes and gists
 
 [Thursday, Jan 16, 2014, Afternoon](dom_intro_css/dom_intro_css.md)
 
-[Tuesday, Jan 21, 2014, Afternoon] (rails_controllers_rest/RailsController.md)
+[Monday, Jan 20, 2014 Morning](intro_to_databases_sql/intro_to_dbs_and_sql.md)
+
+[Tuesday, Jan 21, 2014, Afternoon](rails_controllers_rest/RailsController.md)
 
