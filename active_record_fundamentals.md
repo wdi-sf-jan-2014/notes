@@ -15,3 +15,7 @@
 ## Specifying model functionality with RSpec
 
 ## Implementing model functionality
+
+## Changing model functionality
+
+### Migrations
