@@ -183,7 +183,4 @@ Extend the movie app:
 - Add search controller method
 - Make OMDB API call retrieving movies
 - Add each movie to the movie_db, redirect to home page
-
-###Bonus
-
-- Instead of adding all search results blindly, show list of results and allow user to pick which ones to add.  	
+ 	
