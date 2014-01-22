@@ -183,4 +183,7 @@ Extend the movie app:
 - Add search controller method
 - Make OMDB API call retrieving movies
 - Add each movie to the movie_db, redirect to home page
- 	
+
+###Bonus
+
+- remove @@movie_db with a true Rails Model 'Movie' (like Plane and Bog)	
