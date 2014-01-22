@@ -29,6 +29,8 @@ A repository for lecture notes and gists
 
 [Rails Controller and REST](rails_controllers_rest/RailsController.md)
 
+[Rails View](rails_view.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -52,4 +54,6 @@ A repository for lecture notes and gists
 [Monday, Jan 20, 2014 Morning](intro_to_databases_sql/intro_to_dbs_and_sql.md)
 
 [Tuesday, Jan 21, 2014, Afternoon](rails_controllers_rest/RailsController.md)
+
+[Wednesday, Jan 22, 2014, Morning](rails_view.md)
 
