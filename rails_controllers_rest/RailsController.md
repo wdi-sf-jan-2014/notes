@@ -193,4 +193,4 @@ Extend the movie app:
 
 ###Bonus
 
-- remove @@movie_db with a true Rails Model 'Movie' (like Plane and Bog). Keep model simple, use just 'title' and 'year' attributes.If you do the bonus, no need to implement update and destroy for @@movie_db	
+- remove @@movie_db with a true Rails Model 'Movie' (like Plane and Bog). Keep model simple, use just 'imdbID', 'title' and 'year' attributes.	
