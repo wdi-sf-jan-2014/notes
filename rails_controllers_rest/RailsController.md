@@ -55,6 +55,13 @@ The naming convention of controllers in Rails favors pluralization of the last w
 
 **Following this convention** will allow you to use the default route generators. 
 
+#Get code
+https://github.com/aikalima/wdi_rails_movie_views
+
+- check routes - wow
+- show binding.pry
+- flash
+- different
 
 ###Methods and actions, instance variables, parameters
 
@@ -180,7 +187,7 @@ Extend the movie app:
 ####add 'search' feature (that's not REST)
 
 - Add a new view with a search box (or incorporate into exiting view)
-- Add search controller method
+- Add search method to movie controller
 - Make OMDB API call retrieving movies
 - Add each movie to the movie_db, redirect to home page
 
