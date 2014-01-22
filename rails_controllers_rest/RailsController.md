@@ -125,6 +125,13 @@ Way more useful is rendering json. This comes in handy when you build your own A
 
 To get jsown, request URL .../movies.json  Voila!
 
+
+### A word about integrating bootstrap
+
+Find gem or download files? Your call. Options:
+
+http://stackoverflow.com/questions/18371318/installing-bootstrap-3-on-rails-app
+
 ### Remaining REST methods
 
 ####edit
@@ -152,30 +159,31 @@ To get jsown, request URL .../movies.json  Voila!
     	# render :index
     	redirect_to action: :index
   	end
+
+##Lab 01/22/14
+
+Extend the movie app:
   	
 ####update
 
-	def update
-    	# 'delete and insert'
-    	@@movie_db.delete_if do |m|
-      		m["imdbID"] == params[:id]
-    	end
-
-    	#create new movie
-    	movie = params.require(:movie).permit(:title, :year)
-    	movie['imdbID'] = params[:id]
-
-    	@@movie_db << movie
-    	redirect_to action: :index
-	end  	
-
+	implement
+	
 ####destroy
 
-	def destroy
-    	@@movie_db.delete_if do |m|
-      		m["imdbID"] == params[:id]
-    	end
-    	redirect_to action: :index
-  	end
-
+	implement
  
+
+#### add bootstrap navigation bar 
+
+- nav bar shall have links to new, edit and home page
+
+####add 'search' feature (that's not REST)
+
+- Add a new view with a search box (or incorporate into exiting view)
+- Add search controller method
+- Make OMDB API call retrieving movies
+- Add each movie to the movie_db, redirect to home page
+
+###Bonus
+
+- Instead of adding all search results blindly, show list of results and allow user to pick which ones to add.  	
