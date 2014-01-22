@@ -186,4 +186,4 @@ Extend the movie app:
 
 ###Bonus
 
-- remove @@movie_db with a true Rails Model 'Movie' (like Plane and Bog)	
+- remove @@movie_db with a true Rails Model 'Movie' (like Plane and Bog). If you do the bonus, no need to implement update and destroy for @@movie_db	
