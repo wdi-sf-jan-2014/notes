@@ -31,6 +31,8 @@ A repository for lecture notes and gists
 
 [Rails View](rails_view.md)
 
+[Exploring the Model](exploring_the_model/exploring_the_model.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -57,3 +59,4 @@ A repository for lecture notes and gists
 
 [Wednesday, Jan 22, 2014, Morning](rails_view.md)
 
+[Thursday, Jan 23, 2014, Morning](exploring_the_model/exploring_the_model.md)
