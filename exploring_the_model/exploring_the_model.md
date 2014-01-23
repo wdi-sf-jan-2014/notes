@@ -2,14 +2,14 @@
 
 ## Taking another look at the controller
 
-Let's take a look at [Rails fat
-controllers](https://github.com/wdi-sf-jan-2014/contacts)
-
 ### The role of the controller in the MVC stack
 
 ### A controller with its concerns breached
 
 [![ScreenShot](controller_obesity.png)](http://www.youtube.com/watch?v=91C7ax0UAAc)
+
+Let's take a look at [Rails fat
+controllers](https://github.com/wdi-sf-jan-2014/contacts)
 
 ## Separation of concerns
 
