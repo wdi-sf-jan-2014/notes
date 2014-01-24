@@ -1,0 +1,108 @@
+# JavaScript Functions
+
+Every programming language has one or two things that you really have to
+grok in order to understand the rest of the language and its idioms.
+
+## Examples
+
+* In ruby everything is an object
+
+* In java you can't do anything without declaring a class
+
+* In c or c++ you need to understand pointers
+
+### In JS, you have to grok functions!
+
+## Functions in JS are values
+
+### Our first function
+
+Fire up your chrome developer tools console
+
+Type in `3` and press enter. You get `3` back. The JS console returns
+the value `3` right back. Awesome.
+
+Now, type in:
+
+```
+(function () {});
+```
+
+What do you see? 
+
+```
+function () {}
+```
+
+Just like with the number `3`, functions are values!
+
+Just as an aside, doesn't that look like a lambda in ruby a little bit?
+In JS, that is an anonymous function. Very similar... and very cool, as
+you'll see shortly.
+
+### What can you do with values in ruby?
+
+* store references to values
+* perform operations on values with operators
+* pass them around between methods
+
+#### When it comes to JS that last one is the most important
+
+## Functions are a reference type
+
+Before we do anything else with functions, let's talk about their type.
+
+Spencer has spoken about the difference between value types and
+reference types. 
+
+Type in the following into the JS Developer Tools console:
+
+```
+(function () {}) === (function () {});
+```
+
+That returns `false`.
+
+So based on the return value, what kind of type are functions?
+
+## Let's use our bare bones function
+
+To use a function in JS, we apply it to some arguments
+This is not necessarily different from ruby, but it's important to think
+about what that statement really means and how it sounds different from
+ruby.
+
+In ruby, you generally say something like:
+"Call a method on this object, and pass in some arguments"
+
+In JS, you should say something like:
+"Apply the function to the arguments... x, y, z"
+
+Let's apply the function we wrote before to zero arguments.
+
+```
+(function () {})();
+```
+
+That returns `undefined`. Remember what Spencer said about `undefined`?
+In JS, `undefined` is the absence of value. 
+
+### Why does the above return `undefined`?
+
+Let's dissect a function first.
+
+```
+// defining a function means writing the word
+// function
+// followed by a list of 0 or more arguments
+// followed by the body of the function, 
+//   which may have 0 or more JS statements
+
+function () {
+
+}
+```
+
+Unlike with ruby, which has implicit return, JS does *not* have implicit
+return. This is why functions that don't have a `return` statement
+return `undefined`.
