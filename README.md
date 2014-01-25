@@ -31,6 +31,10 @@ A repository for lecture notes and gists
 
 [User authentication and sessions] (user_auth/UserSessionsAndAuth.md)
 
+[Rails View](rails_view.md)
+
+[Exploring the Model](exploring_the_model/exploring_the_model.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -54,6 +58,10 @@ A repository for lecture notes and gists
 [Monday, Jan 20, 2014 Morning](intro_to_databases_sql/intro_to_dbs_and_sql.md)
 
 [Tuesday, Jan 21, 2014, Afternoon](rails_controllers_rest/RailsController.md)
+
+[Wednesday, Jan 22, 2014, Morning](rails_view.md)
+
+[Thursday, Jan 23, 2014, Morning](exploring_the_model/exploring_the_model.md)
 
 [Monday, Jan 27, 2014, All Day] (user_auth/UserSessionsAndAuth.md)
 
