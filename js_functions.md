@@ -103,6 +103,55 @@ function () {
 }
 ```
 
+#### The `return` keyword.
+
 Unlike with ruby, which has implicit return, JS does *not* have implicit
 return. This is why functions that don't have a `return` statement
 return `undefined`.
+
+```
+(function () { 
+  return 'Hello ' + 'World';
+})();
+
+  // 'Hello World'
+```
+
+The `return` keyword creates a return statement that immediately
+terminates the function application and returns the result of evaluating
+its expression.
+
+##### You Do: Let's have a function return a function
+
+Your goal is to write a function, which returns a function,
+applying the function, which evaluates to a function that when applied
+evaluates to 'Hello World'. Perform the definition and application in
+one statement.
+
+Answer: 
+```
+(function () {
+   return (function () {
+     return 'Hello World';
+   });
+})()();
+```
+
+### Let's dissect a complicated example
+
+Why does applying the function below to any arguments always return
+`true`?
+
+```
+(function (value) {
+  return (function (copy) {
+    return copy === value;
+  })(value);
+})("Hello World");
+
+(function (value) {
+  return (function (copy) {
+    return copy === value;
+  })(value);
+})([1, 2, 3]);
+```
