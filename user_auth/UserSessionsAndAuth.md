@@ -1,5 +1,4 @@
 
-
 ##Objectives
 
 - Understand user authentication and password encryption
@@ -377,7 +376,7 @@ The remember_token introduces several new elements to the User model (app/models
 
 > before_create :create_remember_token
  
-In User Model, add a method that creates token. It's a *private* method, i.e. it's cannot be called form outside the class.
+In User Model, add a method that creates token. It's a *private* method, i.e. it cannot be called from outside the class, it's hidden from the world.
 
 	private
 
