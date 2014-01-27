@@ -1,4 +1,3 @@
-
 ##Objectives
 
 - Understand user authentication and password encryption
@@ -26,7 +25,8 @@ Along the way, we are going to introduce a few new concepts:
 
 Starting point:
 
-> git clone https://github.com/aikalima/wdi6_cook_book_blank
+**Fork https://github.com/aikalima/wdi6_cook_book_blank
+and clone to a local workspace**
 
 Follow instructions in README, launch app, look around.
 
@@ -34,7 +34,9 @@ Follow instructions in README, launch app, look around.
 
 ##Authentication
 
-There are a couple of gems that provide authentication and authorization out of the box. For example: Clearance, Authlogic, Devise, and CanCan. 
+There are a couple of gems that provide authentication and authorization out of the box. For example: Clearance, Authlogic, Devise. Some gems provide authorization functionality only, like CanCan. 
+
+What's the difference between authentication and authorization?
 
 Why roll your own?
 
