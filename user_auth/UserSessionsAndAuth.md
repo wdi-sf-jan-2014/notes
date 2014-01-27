@@ -1,39 +1,60 @@
 
 
-##Objective
+##Objectives
 
-- Learn how to work with and existing code base.
-- Understand Sessions
-- Learn about User input and Model validation
+- Understand user authentication and password encryption
+- Understand sessions
+- Learn about input validations
+- Learn how integrate new features into existing code base.
 
 ##Intro
 
-Today we build a user authentication system into an existing rails app. A User should be able to create a profile and access it using a secure password. Certain features should be restricted to autenticated users only.
+Virtually all web applications require a login and authentication system of some sort. Today we build one into an existing rails app. 
 
-###Authentication
+The idea is that users should be able to create a profile and access it using a secure password. Certain features shall be restricted to authenticated users only. 
 
-Virtually all web applications require a login and authentication system of some sort.
+We are going to learn how to use session objects to *maintain state* during visits.
 
-- match profiles to users
-- to access user's data
-- to restrict access (e.g., only admins can create new accounts)
+Along the way, we are going to introduce a few new concepts:
 
-Examples of authentication and authorization gems include Clearance, Authlogic, Devise, and CanCan 
+- Validators
+- Callbacks
+- Sessions & Cookies
+- Encryption
+- Helpers
+
+####Preparation
+
+Starting point:
+
+> git clone https://github.com/aikalima/wdi6_cook_book_blank
+
+Follow instructions in README, launch app, look around.
+
+*Let's take a tour…*
+
+##Authentication
+
+There are a couple of gems that provide authentication and authorization out of the box. For example: Clearance, Authlogic, Devise, and CanCan. 
 
 Why roll your own?
 
-- practical experience shows that authentication on most sites requires extensive customization, and modifying a third-party product is often more work than writing the system from scratch. They often are a black box.
+- Practical experience shows that authentication on most sites requires extensive customization, and modifying a third-party product is often more work than writing the system from scratch. They often are a black box.
 
-- when you write your own system, you are far more likely to understand it. 
+- When you write your own system, you are far more likely to understand it. 
 
 - It's easy to build one and a great learning experience. That's what we are going to do today.
 
 
-###Sessions
+##Sessions
 
-Perhaps DIAGRAM
+DIAGRAM
 
-Your application has a session for each user in which you can store small amounts of data that will be persisted between requests. The session is only available in the controller and the view.
+Inspect browser cookies:
+
+> chrome://settings/cookies
+
+In Rails, your application has a session for each user in which you can store small amounts of data that will be persisted between requests. The session is only available in the controller and the view.
 
 We’ll be using sessions to implement the common pattern of “signing in”, and an optional “remember me” checkbox for persistent sessions, and automatically remembering sessions until the user explicitly signs out.
 
@@ -41,47 +62,41 @@ Rails uses a cookie to store a unique ID for each session. You must use a cookie
 
 What is a cookie? http://en.wikipedia.org/wiki/HTTP_cookie
 
-This ID is used to look up the session data on the server, e.g. in a database table. In our scenario, session data is the user's profile.
-
-More on how to use Sessions in Rails and the Session object in today's code along.
+This ID is used to look up the session data on the server, e.g. in a database table.
 
 Let's get started.
 
 ##Hands on
 
-In your Code folder:
-
-> git clone ….
-
-Launch the app, follow instrauction in README. Let's look around.
-
-*DEMO*
-
 OK, thinking about users, profiles, authentication, passwords etc. What are some of the features or components that you anticipate in your app:
 
-- User Model
 - Sign in Page
 - Sign Up page
 - Sign out button
-- User Page
+- User Page (like a profile)
 - A secure password, please
 - Session, so system knows who I am during visit.
+- User Model
 
 *Discuss how to start*
 
-**Models the we need?** 
+**Models** 
+
+- User
+
+**Controllers**
 
 - User
 - Session
 
-**Routes that the app needs to support?**
+**Routes**
 
 - signin
 - signup
 - signout
-- user page (like a profile page)
+- user page
 
-Let's start with routes. Get the easy stuff out of the way:
+Let's start with routes. "Top down". Get the easy stuff out of the way:
 
 ###Routes
 
@@ -105,7 +120,7 @@ Confirm that controllers were generated properly.
 
 ###Models
 
-In routes file we added two resource, users and sessions. How many Models? **Only one, User**! Sessions are transient, not permanent.
+In routes config, we added two resources: users and sessions. How many Models? **Only one, User**! Sessions are transient, not permanent.
 
 Let's start simple, User has a name and email:
 
@@ -132,7 +147,7 @@ Got to: http://bcrypt-ruby.rubyforge.org/ - see what it does.
 
 Let's add encrypted password to the User model:
 
-We’ll start with the necessary change to the data model for users, which involves adding a password_digest column to the users table. The name digest comes from the terminology of cryptographic hash functions By encrypting the password properly, we’ll ensure that an attacker won’t be able to sign in to the site even if they manage to obtain a copy of the database.
+We’ll start with the necessary change to the data model for users, which involves adding a password_digest column to the users table. The name digest comes from the terminology of cryptographic hash functions. By encrypting the password properly, we’ll ensure that an attacker won’t be able to sign in to the site even if they manage to obtain a copy of the database.
 
 Create migration:
 
@@ -161,19 +176,19 @@ Simply add has_secure_password to the User Model and make password attributes ac
   		has_secure_password
 	end
 
-*For explanantion, go to http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password*
+*For explanation, go to http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password*
 
-has_secure_password adds *autenticate* method to User objects, so you can do:
+has_secure_password adds *authenticate* method to User objects, so you can do:
 
 > user.authenticate(password)
 
-OK, this is good for now. Obviously, we would like to add password validation, checking for existance and minimum length, and make sure supplied password and password confirmation match. We defer on that for now.
+OK, this is good for now. Obviously, we would like to add password validation, checking for existence and minimum length. We defer on that for now.
 
-Let's try what we have in Rails console
+Let's try what we have in Rails console.
 
-> rails c
-> 
-> User.create(name: "Marky Mark", email: "marky@example.com",password: "foobar", password_confirmation: "foobar")
+###YOU DO:
+
+**create user with password in rails console, inspect result**
 
 Works!
 
@@ -186,7 +201,7 @@ Let's talk about the UI. We need:
 - Sign out: It's just a link
 - Profile page: display user info
 
-Take a look at layouts/application and _header files. Content is yielded in a bootstrap grid column spanning 10 cols. That's where our pages will go.
+Take a look at layouts/application and _header files. The content is yielded in a bootstrap grid column spanning 10 cols. That's where our pages will go.
 
 **create views/users/new.html.erb**
 
@@ -194,33 +209,10 @@ Take a look at layouts/application and _header files. Content is yielded in a bo
 
 	<div class="row">
   		<div class="span6 offset3">
-    		<%= form_for(@user) do |f| %>
-      			<% unless @user.errors.count == 0   %>
-          		<div class="alert alert-error">
-            		The form contains <%= pluralize(@user.errors.count, "error") %>.
-          		</div>
-        		<ul>
-        		<% @user.errors.full_messages.each do |msg| %>
-            		<li>* <%= msg %></li>
-        		<% end %>
-       			</ul>
-        		<% end %>
-        		
-      			<%= f.label :name %>
-      			<%= f.text_field :name %>
-
-      			<%= f.label :email %>
-      			<%= f.text_field :email %>
-
-      			<%= f.label :password %>
-      			<%= f.password_field :password %>
-
-      			<%= f.label :password_confirmation, "Confirmation" %>
-      			<%= f.password_field :password_confirmation %>
-
-      			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    		<% end %>
-  		</div>
+    	
+    		FORM GOES HERE
+    		
+    	</div>
 	</div>
 
 
@@ -228,10 +220,7 @@ Take a look at layouts/application and _header files. Content is yielded in a bo
 
 	<div class="row">
   		<aside class="span4">
-    		<section>
-      			<h3><%= @user.name %></h3>
-      			<h3><%= @user.email %></h3>
-    		</section>
+    		USER INFO GOES HERE
   		</aside>
 	</div>
 
@@ -242,18 +231,7 @@ Take a look at layouts/application and _header files. Content is yielded in a bo
 
 	<div class="row">
   		<div class="span6 offset3">
-    		<%= form_for(:session, url: sessions_path) do |f| %>
-
-      		<%= f.label :email %>
-      		<%= f.text_field :email %>
-
-      		<%= f.label :password %>
-      		<%= f.password_field :password %>
-
-      		<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    	<% end %>
-
-    	<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+			FORM GOES HERE
   		</div>
 	</div>
 
@@ -299,22 +277,7 @@ Let's work on those controllers
 
 ###sessions_controller.rb
 
-**create method** -> sign in !
-
-	def create
-    	signin_params = params[:session]
-    	user=User.find_by_email(signin_params[:email].downcase)
-    	if user && user.authenticate(signin_params[:password])
-      		# Sign the user in and redirect to the user's show page.
-      		# sign_in user
-      		redirect_to user
-    	else
-      		# Create an error message and re-render the signin form.
-      		flash.now[:error]='Invalid email/password combination'
-      		render :new
-    	end
-  	end
-
+**create method** -> sign in ! Here is what it needs to do:
 It shall:
 
 - find user by email
@@ -322,6 +285,22 @@ It shall:
 - authenticate user
 - display error if not authenticated
 - if OK, redirect to user page (profile)
+
+
+		def create
+    		signin_params = params[:session]
+    		user=User.find_by_email(signin_params[:email].downcase)
+    		if user && user.authenticate(signin_params[:password])
+      			# Sign the user in and redirect to the user's show page.
+      			# sign_in user
+      			redirect_to user
+    		else
+      			# Create an error message and re-render the signin form.
+      			flash.now[:error]='Invalid email/password combination'
+      			render :new
+    		end
+  		end
+
 
 **destroy method** -> sign out !
 
@@ -366,16 +345,37 @@ Because HTTP is a stateless protocol, web applications requiring user signin mus
 
 Don't use user ID, it can be spoofed. So let's add remember token to User Model:
 
-
  > rails generate migration add_remember_token_to_users
  
+Edit migration file:
+ 
+	class AddRememberTokenToUsers < ActiveRecord::Migration
+  		def change
+    		add_column :users, :remember_token, :string
+    		add_index  :users, :remember_token
+  		end
+	end
+
+Run:
+
  > rake db:migrate
+ 
+Verify db/schema.rb, make sure it contains the new colum in user table:
+
+	create_table "users", :force => true do |t|
+		t.string   "name"
+		t.string   "email"
+		t.datetime "created_at",      :null => false
+		t.datetime "updated_at",      :null => false
+		t.string   "password_digest"
+		t.string   "remember_token"
+	end
  
 The remember_token introduces several new elements to the User model (app/models/user.rb). First, we add a callback method to create a remember token immediately before creating a new user in the database:
 
 > before_create :create_remember_token
  
-In User Model, Implement method that creates token:
+In User Model, add a method that creates token. It's a *private* method, i.e. it's cannot be called form outside the class.
 
 	private
 
@@ -383,7 +383,7 @@ In User Model, Implement method that creates token:
     		self.remember_token = SecureRandom.urlsafe_base64
   		end 
 
-and add "callback"
+and add "callback":
 
 	before_save :create_remember_token
 	
@@ -450,10 +450,12 @@ Important: include SessionsHelper Module in application_controller.rb
 
 	include SessionsHelper
 
-
-Restict feature access to signed in users: books_controller.rb / ingredients_controller.rb / recipes_controller.rn
+Allow access to edit features only for signed in users: books_controller.rb / ingredients_controller.rb / recipes_controller.rn
 
 	before_filter :signed_in_user, only: [:create, :new, :edit, :update]
+
+
+Now use: Use sign_in , sign_out methods in user and session controllers.
 
 
       		
