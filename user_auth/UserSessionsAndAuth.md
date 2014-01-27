@@ -25,8 +25,11 @@ Along the way, we are going to introduce a few new concepts:
 
 Starting point:
 
-**Fork https://github.com/aikalima/wdi6_cook_book_blank
-and clone to local workspace**
+Fork 
+
+> https://github.com/aikalima/wdi6_cook_book_blank
+
+and clone to local workspace
 
 Follow instructions in README, launch app, look around.
 
