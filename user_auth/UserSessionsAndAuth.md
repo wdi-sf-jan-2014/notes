@@ -131,6 +131,7 @@ In routes config, we added two resources: users and sessions. How many Models? *
 Let's start simple, User has a name and email:
 
 > rails generate model User name:string email:string
+
 > rake db:migrate
 
 Let's learn a new gem. Everybody run:
