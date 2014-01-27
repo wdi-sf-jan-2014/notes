@@ -35,7 +35,7 @@ Follow instructions in README, launch app, look around.
 
 *Let's take a tour…*
 
-##Authentication
+##Authentication ... and authorization
 
 There are a couple of gems that provide authentication and authorization out of the box. For example: Clearance, Authlogic, Devise. Some gems provide authorization functionality only, like CanCan. 
 
