@@ -19,7 +19,7 @@ Along the way, we are going to introduce a few new concepts:
 - Callbacks
 - Sessions & Cookies
 - Encryption
-- Helpers
+- Modules
 
 ####Preparation
 
