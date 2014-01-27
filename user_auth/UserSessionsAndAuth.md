@@ -2,7 +2,7 @@
 
 - Understand user authentication and password encryption
 - Understand sessions
-- Learn about input validations
+- Learn about input validation and validators
 - Learn how integrate new features into existing code base.
 
 ##Intro
