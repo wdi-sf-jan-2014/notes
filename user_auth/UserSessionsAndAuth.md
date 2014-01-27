@@ -68,6 +68,8 @@ What is a cookie? http://en.wikipedia.org/wiki/HTTP_cookie
 
 This ID is used to look up the session data on the server, e.g. in a database table.
 
+>     <%= debug(session) if Rails.env.development? %>
+
 Let's get started.
 
 ##Hands on
