@@ -186,7 +186,7 @@ OK, this is good for now. Obviously, we would like to add password validation, c
 
 Let's try what we have in Rails console.
 
-###YOU DO:
+###YOU DO - rails console (5 min)
 
 **create user with password in rails console, inspect result**
 
@@ -202,6 +202,8 @@ Let's talk about the UI. We need:
 - Profile page: display user info
 
 Take a look at layouts/application and _header files. The content is yielded in a bootstrap grid column spanning 10 cols. That's where our pages will go.
+
+###YOU DO - complete forms (25min)
 
 **create views/users/new.html.erb**
 
