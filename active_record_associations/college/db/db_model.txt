@@ -1,0 +1,34 @@
+
+students
+  - name
+  - sid
+  - mentor_id
+
+mentors
+  - name
+
+account
+  - balance
+  - student_id
+
+
+class
+  - name
+  - description
+  
+enrollment
+  - student_id
+  - class_id
+
+
+a student has one mentor
+a mentor has many students
+
+a student has one account
+an account has one student
+
+a student has many classes through enrollment
+a class has many students through enrollment
+
+
+
