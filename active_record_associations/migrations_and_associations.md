@@ -49,7 +49,7 @@ First create a new app:
 ```
 rails new college
 ```
-Then create a students model, __no test frameowrk!__ and execute the migration:
+Then create a students model, __no test framework!__ and execute the migration:
 
 ```
 rails g model student name:string --no-test-framework
