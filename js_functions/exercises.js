@@ -28,3 +28,30 @@
   // the second one applies no arguments to the function
   // returned by the first function
 )()(); 
+
+// Exercise: describe the crazy example below in words by commenting the code 
+
+// We've seen this
+(function (x) { return x; })(2);
+
+// What happens is this:
+// 
+// * JavaScript parses this whole thing as an expression made up of several sub-expressions.
+// * It then starts evaluating the expression, including evaluating sub-expressions
+// * One sub-expression, function (x) { return x } evaluates to a function.
+// * Another, 2, evaluates to the number 2.
+// * JavaScript now evaluates applying the function to the argument 2. Here’s where it gets interesting…
+// * An environment is created.
+// * The value ‘2’ is bound to the name ‘x’ in the environment.
+// * The expression ‘x’ (the right side of the function) is evaluated within the environment we just created.
+// * The value of a variable when evaluated in an environment is the value bound to the variable’s name in that environment, which is ‘2’
+// * And that’s our result.
+
+// Describe the thing below in words; the first two steps are copied from above
+// * JavaScript parses this whole thing as an expression made up of several sub-expressions.
+// * It then starts evaluating the expression, including evaluating sub-expressions
+(function (x) { 
+  return (function (y) { 
+    return x; 
+  }) 
+})(4)(2);
