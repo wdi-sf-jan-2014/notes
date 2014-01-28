@@ -264,4 +264,120 @@ What happens is this:
 
 #### You do: Describe the crazy example in the terms above
 
+[Exercises](exercises.js)
 
+#### Free variables and environments
+
+What we arrive at is the idea that a function always has a reference to its immediate parent environment.
+
+Let's take a look at the environments created by each function in our example from the exercises:
+
+```
+(function (x) { 
+	// { x: 4, '..': global environment }
+	return (function (y) { 
+		// { y: 2, '..': { x: 4 } }
+		return x; 
+	}) 
+})(4)(2);
+```
+
+Notice the double ellipses... they reference one level up. It's kind of like `..` in the terminal.
+
+### Function naming
+
+#### var
+
+Spencer had spoken about the `var` keyword as a way to declare a variable that refers to a value.
+
+Naturally, in js, we may declare a variable that stores a reference to a function:
+
+```
+var circumference = function (pi, radius) { 
+	return 2 * pi * radius; 
+};
+
+// Let's apply the function to two arguments:
+circumference(3.14, 2);
+// => 12.56
+```
+
+Let's try one more thing:
+
+```
+circumference.name;
+```
+
+What I'd like to emphasize is that we've not actually explicitly named our function. We simply have a reference to the function value.
+
+We may easily reassign to `circumference` and we'll lose our function reference forever and won't be able to call it again.
+
+```
+circumference = 2;
+circumference(3.14, 2);
+// => TypeError: Property 'circumference' of object #<Object> is not a function
+```
+##### So what does `var` actually do?
+
+The `var` keyword introduces one or more bindings in the current function’s environment. 
+
+Reimplement the above circumference function, by binding the value of PI to the function's environment.
+
+[Exercises](exercises.js)
+
+#### named function expressions vs function declarations
+
+This is not so exciting. Let's implement a named function.
+
+```
+var c = function circumference (radius) {
+	var Pi = 3.14;
+	return 2 * pi * radius;
+};
+```
+
+You'd think you could call this function by name, like so:
+
+```
+circumference(2);
+```
+
+This fails.
+
+This does not:
+
+```
+c(2);
+```
+
+Take a look at the name:
+
+```
+c.name;
+```
+
+It turns out that while we have indeed created a named function, whose name is circumference, we've not actually *declared* a function. Instead, what we had done was that we wrote a named function expression.
+
+That's not super useful - at least not in this context.
+
+Let's actually write a function declaration:
+
+```
+function circumference (radius) {
+	var Pi = 3.14;
+	return 2 * pi * radius;
+}
+```
+
+Ahh, joy:
+
+```
+circumference(2);
+circumference.name;
+```
+
+We are awesome.
+
+## Back to our objective... 
+
+[Exercises](exercises.js)

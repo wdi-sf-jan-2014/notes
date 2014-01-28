@@ -55,3 +55,25 @@
     return x; 
   }) 
 })(4)(2);
+
+
+// Exercise: reimplement the function below, by binding the value of PI in the
+// function's environment, with the var keyword
+var circumference = function (pi, radius) { 
+  return 2 * pi * radius; 
+};
+
+// Exercise: describe in words why the function in our objective always returns
+// true regardless of the value to which it is applied 
+
+(function (value) {
+  return (function (copy) {
+    return copy === value;
+  })(value);
+})("Hello World");
+
+(function (value) {
+  return (function (copy) {
+    return copy === value;
+  })(value);
+})([1, 2, 3]);
