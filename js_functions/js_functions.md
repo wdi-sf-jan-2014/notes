@@ -11,6 +11,33 @@ grok in order to understand the rest of the language and its idioms.
 
 * In c or c++ you need to understand pointers
 
+## Objective
+
+Understand why this function always returns true regardless of the argument:
+
+```
+(function (value) {
+  return (function (copy) {
+    return copy === value;
+  })(value);
+})("Hello World");
+
+(function (value) {
+  return (function (copy) {
+    return copy === value;
+  })(value);
+})([1, 2, 3]);
+```
+
+### Sub-objectives
+
+* Functions as environments << This is absolutely key
+* Function declaration vs function expression
+  * Function declaration
+  * Function expression
+  * Anonymous function expression
+  * Immediately-invoked function expressions (IIFE)
+
 ### In JS, you have to grok functions!
 
 ## Functions in JS are values
@@ -127,7 +154,7 @@ its expression.
 
 ### Let's dissect a complicated example
 
-Why does applying the function below to any arguments always return
+Why does applying the function below to any argument always return
 `true`?
 
 ```
@@ -143,3 +170,18 @@ Why does applying the function below to any arguments always return
   })(value);
 })([1, 2, 3]);
 ```
+
+#### Let's talk about arguments and parameters
+
+```
+// when applied to a value referenceing an array this function 
+// logs every element in the array to the console
+(function (array) {
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+})([1,2,3]);
+```
+
+In prior examples we have been applying functions to no arguments.
+In this one, we are applying a function to one argument.

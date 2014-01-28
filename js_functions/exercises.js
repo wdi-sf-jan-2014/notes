@@ -1,3 +1,5 @@
+// Exercise: Let's have a function return a function
+
 // Your goal is to write a function, which returns a function,
 // applying the function, which evaluates to a function that when applied
 // evaluates to 'Hello World'. Perform the definition and application in
