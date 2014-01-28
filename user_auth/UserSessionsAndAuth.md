@@ -19,7 +19,7 @@ Along the way, we are going to introduce a few new concepts:
 - Callbacks
 - Sessions & Cookies
 - Encryption
-- Modules
+- Helpers
 
 ####Preparation
 
@@ -35,7 +35,7 @@ Follow instructions in README, launch app, look around.
 
 *Let's take a tour…*
 
-##Authentication ... and authorization
+##Authentication
 
 There are a couple of gems that provide authentication and authorization out of the box. For example: Clearance, Authlogic, Devise. Some gems provide authorization functionality only, like CanCan. 
 
@@ -67,8 +67,6 @@ Rails uses a cookie to store a unique ID for each session. You must use a cookie
 What is a cookie? http://en.wikipedia.org/wiki/HTTP_cookie
 
 This ID is used to look up the session data on the server, e.g. in a database table.
-
->     <%= debug(session) if Rails.env.development? %>
 
 Let's get started.
 
@@ -131,7 +129,6 @@ In routes config, we added two resources: users and sessions. How many Models? *
 Let's start simple, User has a name and email:
 
 > rails generate model User name:string email:string
-
 > rake db:migrate
 
 Let's learn a new gem. Everybody run:
@@ -210,7 +207,6 @@ Let's talk about the UI. We need:
 
 Take a look at layouts/application and _header files. The content is yielded in a bootstrap grid column spanning 10 cols. That's where our pages will go.
 
-###YOU DO - complete forms (25min)
 
 **create views/users/new.html.erb**
 
@@ -218,18 +214,45 @@ Take a look at layouts/application and _header files. The content is yielded in 
 
 	<div class="row">
   		<div class="span6 offset3">
-    	
-    		FORM GOES HERE
-    		
-    	</div>
+    		<%= form_for(@user) do |f| %>
+      			<% unless @user.errors.count == 0   %>
+          		<div class="alert alert-error">
+            		The form contains <%= pluralize(@user.errors.count, "error") %>.
+          		</div>
+        		<ul>
+        		<% @user.errors.full_messages.each do |msg| %>
+            		<li>* <%= msg %></li>
+        		<% end %>
+       			</ul>
+        		<% end %>
+        		
+      			<%= f.label :name %>
+      			<%= f.text_field :name %>
+
+      			<%= f.label :email %>
+      			<%= f.text_field :email %>
+
+      			<%= f.label :password %>
+      			<%= f.password_field :password %>
+
+      			<%= f.label :password_confirmation, "Confirmation" %>
+      			<%= f.password_field :password_confirmation %>
+
+      			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    		<% end %>
+  		</div>
 	</div>
+
 
 
 **create views/users/show.html.erb** (profile page)
 
 	<div class="row">
   		<aside class="span4">
-    		USER INFO GOES HERE
+    		<section>
+      			<h3><%= @user.name %></h3>
+      			<h3><%= @user.email %></h3>
+    		</section>
   		</aside>
 	</div>
 
@@ -240,7 +263,18 @@ Take a look at layouts/application and _header files. The content is yielded in 
 
 	<div class="row">
   		<div class="span6 offset3">
-			FORM GOES HERE
+    		<%= form_for(:session, url: sessions_path) do |f| %>
+
+      		<%= f.label :email %>
+      		<%= f.text_field :email %>
+
+      		<%= f.label :password %>
+      		<%= f.password_field :password %>
+
+      		<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    	<% end %>
+
+    	<p>New user? <%= link_to "Sign up now!", signup_path %></p>
   		</div>
 	</div>
 
@@ -331,7 +365,8 @@ User controller implements RESTful methods. The **create** method is special. It
   	end
 
   	def create
-    	@user=User.new(params[:user])
+    	new_user = params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    	@user=User.new(new_user)
     	if @user.save
       		flash[:success] = "Welcome to the Cook Book app!"
       		# sign_in @user
