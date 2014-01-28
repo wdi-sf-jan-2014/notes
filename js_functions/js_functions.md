@@ -65,7 +65,7 @@ That returns `false`.
 
 So based on the return value, what kind of type are functions?
 
-## Let's use our bare bones function
+## Let's revisit our bare bones function
 
 To use a function in JS, we apply it to some arguments
 This is not necessarily different from ruby, but it's important to think
@@ -123,19 +123,7 @@ its expression.
 
 ##### You Do: Let's have a function return a function
 
-Your goal is to write a function, which returns a function,
-applying the function, which evaluates to a function that when applied
-evaluates to 'Hello World'. Perform the definition and application in
-one statement.
-
-Answer: 
-```
-(function () {
-   return (function () {
-     return 'Hello World';
-   });
-})()();
-```
+[Exercises](exercises.js)
 
 ### Let's dissect a complicated example
 
