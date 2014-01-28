@@ -29,12 +29,12 @@ rails g model student name:string --no-test-framework
 This command creates two files:
  
 ```
-db/migrate/20140127225429_create_accounts.rb
-app/models/account.rb
+db/migrate/20140127225429_create_studentss.rb
+app/models/student.rb
 ```  
 The first file created is the migration which can be run using ```rake db:migrate``` to create the database in SQL.  Migrations files have a format which is important to know.  The first long string of numbers is the timestamp of when the migration was created.  The second part of the filename is the name of the migration.  
 
-The second filename is the model class.  The model inherits from ```ActiveRecord::Base``` and is the class the represents the students database.  This model class cannot do anything to the database until a database exists in a database system like Postgres or sqlite.
+The second filename is the model class.  The model inherits from ```ActiveRecord::Base``` and it is the class that represents the students database.  This model class cannot do anything to the database until a database exists in a database system like Postgres or sqlite.
 
 ### Review Questions
 
@@ -44,7 +44,22 @@ The second filename is the model class.  The model inherits from ```ActiveRecord
 
 ### Exercise
 
-Create a migration that would add a sid (student id) to the students model that we created earlier.  The sid is alpha numeric.  Go into rails console and create a few students.  When you are done, drop the database using ```rake db:drop```
+First create a new app:
+
+```
+rails new college
+```
+Then create a students model, __no test frameowrk!__ and execute the migration:
+
+```
+rails g model student name:string --no-test-framework
+
+rake db:migrate
+```
+
+Now, create a migration that would add a sid (student id) to the students model that we created earlier.  The sid is alpha numeric.  Go into rails console and create a few students.  When you are done, drop the database using ```rake db:drop```.
+
+If you get your database is a strange state, or did something wrong with your migration do the following.  Run ```rake db:drop```.  Delete the new migration that you created in the migration directory: ```db/migrate/```.  Make sure you do not delete the migration that creates the students table. Finally delete the scehma file that was created at ```db/schema.rb```.  Running ```rake db:migrate``` will recreate the database with a students table that only has a name column.
 
 
 ## Model Query Reveiw
@@ -121,6 +136,7 @@ We forgot the sid, let's add it.
 ```
 rails g migration AddSidToStudents sid:string --no-test-framework
 ```
+
 Now create the model for a students account
 
 ```
@@ -165,6 +181,14 @@ CREATE INDEX "index_accounts_on_student_id" ON "accounts" ("student_id");
 
 The __student_id__ column in the sql statement is the important column for the one to one association.  The student_id column corresponds to the primary key of the students table.  The __student_id__ column on the accounts table is called a __foreign key__ since the value in that column is the primary key for another table.
 
+In order for rails to understand that an association is happening, we have to add the information to our model.  In ```app/model/student.rb``` add the has_one association:
+
+```
+class Student < ActiveRecord::Base
+  has_one :account
+end
+```
+
 #### Exercise
 
 Open ```rails console```.  Next create a student this way:
@@ -203,7 +227,7 @@ rake db:migrate
 
 To be able to use the association, we have to add the relationship to the model
 
-In app/models/student.rb
+In ```app/models/student.rb``` a student belongs to a mentor.
 
 ```
 class Student < ActiveRecord::Base
@@ -213,13 +237,15 @@ class Student < ActiveRecord::Base
 end
 ```
 
-In app/models/mentor.rb
+In ```app/models/mentor.rb``` we need to specify the association.  One mentor has many students.
 
 ```
 class Mentor < ActiveRecord::Base
   has_many :students # Note students is plural
 end
 ```
+
+#### Exercise
 
 The has_many relationship is new. Open up ```rails console```.  Create a new mentor.  Give the mentor a few students and see what has_many has added.  
 
@@ -410,7 +436,6 @@ College::Application.routes.draw do
   get '/courses', to: 'courses#index', as: 'courses'
   get '/courses/:id', to: 'courses#show', as: 'course'
 
-  
 end
 ```
 
