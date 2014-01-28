@@ -14,6 +14,9 @@ Build this new functionality starting from a blank rails app.  Try to use migrat
 
 It will be much easier to get started if you seed some data.  Try adding some seed data to ```db/seeds.rb``` then run ```rake db:seed```
 
+HINT: You will need 2 models plus a through table since this is a many to many relationship.
+HINT: Look at the ```db/seeds.rb``` file from the lesson to get an idea of how to seed your models.
+
 BONUS: Make it pretty.
 
 BONUS: Add validation to your models.  Try validating that a product name or category name exists before adding it to the db. Add any other validations that make sense.
