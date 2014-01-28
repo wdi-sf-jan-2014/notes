@@ -445,7 +445,7 @@ We need a courses controller to display our list of courses.  Next we generate a
 rails g controller courses --no-test-framework
 ```
 
-Now let's get our list of courses showing on the root page.  Inside ```app/controllers/students_controller.rb``` add the index method.
+Now let's get our list of courses showing on the root page.  Inside ```app/controllers/courses_controller.rb``` add the index method.
 
 ```
 def index
