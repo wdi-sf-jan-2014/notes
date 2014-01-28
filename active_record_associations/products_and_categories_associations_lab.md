@@ -2,8 +2,8 @@
 
 Your company needs an app to manage a list of products in your store. Here are the features we need:
 
-1. RESTfully create, edit, update and delete products.
-1. RESTfully create, edit, update and delete categories
+1. RESTfully read, create, edit, update and delete products.
+1. RESTfully read, create, edit, update and delete categories
 1. Products should be in many categories, and categories should have many products.  
 1. The manager should be able to see all categories
 1. The manager should be able to go to a category's page and view all the products in that category.
