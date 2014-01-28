@@ -2,13 +2,13 @@
 
 ## Objectives
 
-* Understand the Concept of ORM
+* Understand the concept of ORM
 * Review rails migrations
   * How is a table created?
   * How is a table changed?
-* Design a Database
-* Create complex models with Associations
-* Query Complex models
+* Design a database
+* Create models with associations
+* Query models with associations
 
 ## ORM
 __What is ORM?__ Object Relational Mapping.  It is a layer on top of the database that provides object oriented access to the data.
