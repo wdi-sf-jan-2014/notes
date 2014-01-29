@@ -65,5 +65,7 @@ A repository for lecture notes and gists
 
 [Thursday, Jan 23, 2014, Morning](exploring_the_model/exploring_the_model.md)
 
-[Monday, Jan 27, 2014, All Day] (user_auth/UserSessionsAndAuth.md)
+[Monday, Jan 27, 2014, All Day](user_auth/UserSessionsAndAuth.md)
+
+[Wednesday, Jan 29, 1014, Morning](js_intro/README.md)
 
