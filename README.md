@@ -29,9 +29,13 @@ A repository for lecture notes and gists
 
 [Rails Controller and REST](rails_controllers_rest/RailsController.md)
 
+[User authentication and sessions] (user_auth/UserSessionsAndAuth.md)
+
 [Rails View](rails_view.md)
 
 [Exploring the Model](exploring_the_model/exploring_the_model.md)
+
+[JavaScript Intro](js_intro/README.md)
 
 ### By date
 
@@ -60,3 +64,8 @@ A repository for lecture notes and gists
 [Wednesday, Jan 22, 2014, Morning](rails_view.md)
 
 [Thursday, Jan 23, 2014, Morning](exploring_the_model/exploring_the_model.md)
+
+[Monday, Jan 27, 2014, All Day](user_auth/UserSessionsAndAuth.md)
+
+[Wednesday, Jan 29, 1014, Morning](js_intro/README.md)
+
