@@ -84,22 +84,7 @@ you'll see shortly.
 
 #### When it comes to JS that last one is the most important
 
-## Functions are a reference type
-
-Before we do anything else with functions, let's talk about their type.
-
-Spencer has spoken about the difference between value types and
-reference types. 
-
-Type in the following into the JS Developer Tools console:
-
-```
-(function () {}) === (function () {});
-```
-
-That returns `false`.
-
-So based on the return value, what kind of type are functions?
+## What type are functions - reference or value type?
 
 ## Let's revisit our bare bones function
 
