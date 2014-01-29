@@ -35,6 +35,8 @@ A repository for lecture notes and gists
 
 [Exploring the Model](exploring_the_model/exploring_the_model.md)
 
+[JavaScript Intro](js_intro/README.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
