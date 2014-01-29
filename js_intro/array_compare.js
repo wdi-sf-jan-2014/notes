@@ -50,23 +50,23 @@ if(0) { // Try: 0, "", undefined, null, false. Anything else is true!
 // ############# JavaScript Object Literals ################
 // ##### JS Object Literals are reference types
 
-var micky_mouse = {
+var mickey_mouse = {
                     "first_name": "Micky",
                     "last_name": "Mouse",
                     "address": "Disneyland"
                   }
-var micky = {
+var mickey = {
                     "first_name": "Micky",
                     "last_name": "Mouse",
                     "address": "Disneyland"
                   }
 
-console.log(micky_mouse.first_name); // Access an object literal value with ".key" syntax!
+console.log(mickey_mouse.first_name); // Access an object literal value with ".key" syntax!
 
-console.log(micky_mouse["first_name"]); // This also works.
+console.log(mickey_mouse["first_name"]); // This also works.
 
 console.log("Are JS Object Literals values? ")
-if(micky_mouse === micky ) {
+if(mickey_mouse === mickey ) {
   console.log(true );
 } else {
   console.log(false );
@@ -97,7 +97,9 @@ if (state === "red") {
 
 var a = [1,2,3,4];
 var b = [1,2,3,4];
+
 console.log("While Loop:")
+
 var i = 0;
 while(i < a.length){
   console.log("The element at index " + i + " is: " + a[i]);
@@ -107,8 +109,15 @@ while(i < a.length){
 // ###########  For Loop:  ############
 
 var mixed = [1, "two", "three", true];
+
 console.log("For Loop:"); // Common mistake: commas instead of "semicolons" inside for loop.
+
 for(var i = 0; i < mixed.length; i++) {
+  console.log("The element at index " + i + " is: " + mixed[i]);
+}
+
+// loop decrementing i
+for(var i = mixed.length -1 ; i >= 0 ; i--) {
   console.log("The element at index " + i + " is: " + mixed[i]);
 }
 
@@ -132,6 +141,7 @@ switch (expression) {
     break;
 }
 
+
 // ################ Exercise #################
 // Since arrays are reference types,
 // we cannot use "===" to compare them.
@@ -140,5 +150,9 @@ switch (expression) {
 // Set "result" to "true" if the two arrays are equal,
 // and to "false" if the two arrays are unequal.
 
+
+// ############# Lab #####################
+// Turn array compare exercise into a function. Return true or false.
+// Code School - DevTools Levels 1-4
 
 

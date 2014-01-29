@@ -7,7 +7,7 @@
 
 ## Learning Objectives
 * <h3>Overview - why JavaScript</h3>
-* <h3>Work Flow: Node, Developer Console</h3>
+* <h3>Today's work flow: Node, Developer Console</h3>
 * <h3>Understand Data Types</h3>
 	* <h3>Comments</h3>
 	* <h3>Numbers</h3>
@@ -67,7 +67,7 @@
 		//=> "hello world"
 
 ## Conditionals: always use Triple Equal "===" or "!=="
-* <h3> Check to see if two values are identical with the "===" comparitor.</h3>
+* <h3> Check to see if two values are identical with the "===" strict equality.</h3>
 
 		console.log("Always use triple equal sign to test equality.")
 
@@ -87,7 +87,8 @@
 		console.log("foo" !== "bar");
 		//=> true
 		
-## Reference Types: non-identical values that the same contents and are the same type. 
+## Reference Types: 
+### Even if they have the same values and are the same type, reference types are not strictly equal.
 * <h3> Arrays are unique structures.</h3>
 
 		console.log("Arrays are reference-type data structures.")
@@ -103,7 +104,7 @@
 * <h3> Oddly enough "undefined" is a value.</h3>
 
 		
-		console.log("undefined is a value-type.")
+		console.log("undefined is a value-type.");
 		console.log(undefined === undefined);
 		//=> true
 
@@ -219,4 +220,11 @@
 
 ## Exercise: Implement a routine that checks to see if two arrays are identical.
 * <h3> Set "result" to "true" if the two arrays are equal, and to "false" if the two arrays are unequal.</h3>
+
+## Afternoon Lab: 
+* <h3> Turn array compare exercise into a function that returns true or false.</h3>
+* <h3>Code School - DevTools Levels 1-4.</h3>
+
+
+
 
