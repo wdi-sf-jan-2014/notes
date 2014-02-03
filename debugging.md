@@ -32,6 +32,8 @@ Make sure you understand what's going on for each request
 
 ##### Add awesome_print to your gemfile
 
+##### Add pry-rails to your gemfile
+
 #### pry-byebug
 
 ##### Add pry-byebug to your gemfile
