@@ -30,7 +30,7 @@ Make sure you understand what's going on for each request
 
 ##### Add pry to your gemfile
 
-##### Change your pry editor to subl in ~/.pryrc
+##### Add awesome_print to your gemfile
 
 #### pry-byebug
 
