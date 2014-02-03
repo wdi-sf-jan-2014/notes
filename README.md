@@ -39,6 +39,8 @@ A repository for lecture notes and gists
 
 [JavaScript Functions](js_functions/js_functions.md)
 
+[Debugging](debugging.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -72,3 +74,5 @@ A repository for lecture notes and gists
 [Wednesday, Jan 29, 1014, Morning](js_intro/README.md)
 
 [Wednesday, Jan 29, 1014, Afternoon](js_functions/js_functions.md)
+
+[Wednesday, Feb 3, 1014, Afternoon](debugging.md)
