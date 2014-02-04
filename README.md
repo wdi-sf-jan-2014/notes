@@ -41,6 +41,8 @@ A repository for lecture notes and gists
 
 [Debugging](debugging.md)
 
+[Action Mailer] (action_mailer/ActionMailer.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -71,8 +73,11 @@ A repository for lecture notes and gists
 
 [Monday, Jan 27, 2014, All Day](user_auth/UserSessionsAndAuth.md)
 
-[Wednesday, Jan 29, 1014, Morning](js_intro/README.md)
+[Wednesday, Jan 29, 2014, Morning](js_intro/README.md)
 
-[Wednesday, Jan 29, 1014, Afternoon](js_functions/js_functions.md)
+[Wednesday, Jan 29, 2014, Afternoon](js_functions/js_functions.md)
 
-[Wednesday, Feb 3, 1014, Afternoon](debugging.md)
+[Tuesday, Feb 3, 2014, Afternoon](debugging.md)
+
+[Wednesday, Feb 4, 2014, Afternoon] (action_mailer/ActionMailer.md)
+
