@@ -7,7 +7,7 @@
 
 ##Objectives
 
-- Understand basics of how email work
+- Understand basics of emails
 - Learn how to send email from the command line
 - Understand how to send emails from your Rails application
 
@@ -15,7 +15,7 @@
 
 The idea of email originated in the early 60s, way before the world wide web. Our forebearers just figured out how to connect computers - now what? Send messages!
 
-Various forms of one-to-one electronic messaging were used in the 1960s. People communicated with one another using systems developed for specific mainframe computers. As more computers were interconnected, especially in the US Government's ARPANET, standards were developed to allow users of different systems to e-mail one another. **SMTP** grew out of these standards developed during the 1970s.
+Various forms of one-to-one electronic messaging were used in the 1960s. People communicated with one another using systems developed for specific mainframe computers. As more computers were interconnected standards were developed to allow users of different systems to e-mail one another. **SMTP** grew out of these standards developed during the 1970s.
 
 **Simple Mail Transfer Protocol (SMTP)** is an Internet standard for electronic mail (e-mail) transmission across Internet Protocol (IP) networks. 
 
@@ -27,9 +27,9 @@ An Internet email message consists of three components:
 
 The **message envelope** is like the addresses on the outside of an envelope, which are used by mail transport software to route and deliver the email
 
-The **message header** contains control information, including, minimally, an originator's email address and one or more recipient addresses. Usually descriptive information is also added, such as a subject header field and a message submission date/time stamp.
+The **message header** contains control information like an originator's email address and one or more recipient addresses. Usually descriptive information is also added, such as a subject header field and a message submission date/time stamp.
 
-the **message body** contains the actual email text, like the http body contains a web page/html
+the **message body** contains the actual email text, like an HTTP body contains html.
 
 Today's email systems are based on a store-and-forward model. Email servers accept, forward, deliver, and store messages. Neither the users nor their computers are required to be online simultaneously; they need connect only briefly, typically to a mail server, for as long as it takes to send or receive messages.
 
@@ -40,6 +40,7 @@ http://www.howtogeek.com/56002/htg-explains-how-does-email-work
 ###Send an email 'old school'
 
 >  echo "Hello" | mail -v -s "Test" mguehrs@gmail.com
+>  
 >  echo "To me …" | mail -v -s "Test 2" markus
 
 
