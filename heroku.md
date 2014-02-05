@@ -105,4 +105,10 @@ KEY2=VALUE2
 
 Then if you run a command with `foreman run <command>`, those variables will be available through ENV in your code.
 
+
 If you want to have the commands `heroku config:push` and `heroku config:pull` to move environment variable back and forth from `.env` to heroku config all at once, you can run `heroku plugins:install git://github.com/ddollar/heroku-config.git` to install that plugin.
+
+## Resources
+
+[Heroku Rails 4 Tutorial](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+
