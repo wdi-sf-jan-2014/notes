@@ -8,7 +8,7 @@
 
 Intial version of demo app, without ActionMailer:
 
-- https://github.com/aikalima/wdi6_cook_book_blank
+https://github.com/aikalima/wdi6_cook_book_forgot_blank
 
 Final version of demo app, using ActionMailer
 
