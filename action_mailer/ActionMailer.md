@@ -5,7 +5,12 @@
 - http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol
 - http://guides.rubyonrails.org/v2.3.8/action_mailer_basics.html
 
-Final version of demo app:
+
+Intial version of demo app, without ActionMailer:
+
+- https://github.com/aikalima/wdi6_cook_book_blank
+
+Final version of demo app, using ActionMailer
 
 - https://github.com/aikalima/wdi6_cook_book_forgot_final
 
