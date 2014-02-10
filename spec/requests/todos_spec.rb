@@ -8,7 +8,7 @@ describe "Todos" do
     end
 
     it "displays todos" do
-      Todo.create!(title: "Write specs")
+      Todo.create!(title: "Red: Write specs and see them fail")
       get todos_path 
       response.body.should include("Red: Write specs and see them fail")
     end
