@@ -41,6 +41,8 @@ A repository for lecture notes and gists
 
 [Debugging](debugging.md)
 
+[Rails TDD Intro](rails_tdd_intro.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -76,3 +78,5 @@ A repository for lecture notes and gists
 [Wednesday, Jan 29, 1014, Afternoon](js_functions/js_functions.md)
 
 [Wednesday, Feb 3, 1014, Afternoon](debugging.md)
+
+[Monday, Feb 10, 1014, Morning & Afternoon](rails_tdd_intro.md)
