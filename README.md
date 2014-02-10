@@ -1,4 +1,4 @@
-request-specs-with-rspec
+todo-with-rspec
 ========================
 
-This repo contains a rails app with request specs and controller specs that need to pass. Do it.
+This repo contains a rails todo app with specs. Get 'em to pass by writing the functionality.
