@@ -14,7 +14,7 @@ describe "Todos" do
     end
   end
 
-  describe "GET /todo/:id/show" do
+  describe "GET /todos/:id/show" do
     context "given a todo id" do
       before do
         @todo = Todo.create!(title: "Green: Get the specs to pass")
