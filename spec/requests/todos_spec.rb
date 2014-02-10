@@ -9,21 +9,42 @@ describe "Todos" do
 
     it "displays todos" do
       Todo.create!(title: "Write specs")
-      get tasks_path
-      response.body.should include("Write specs")
+      get todos_path 
+      response.body.should include("Red: Write specs and see them fail")
+    end
+  end
+
+  describe "GET /todo/:id" do
+    context "given a todo id" do
+      before do
+        @todo = Todo.create!(title: "Green: Get the specs to pass")
+        get todos_path(@todo.id)
+      end
+
+      it "should be successful" do
+        response.status.should == 200
+      end
+
+      it "should be display the todo" do
+        response.body.should include("Green: Get the specs to pass")
+      end
     end
   end
 
   describe "POST /todos" do
-    it "should be successful" do
-      post todos_path, todo: { title: "Get the specs to pass" }
-      follow_redirect!
-      response.status.should == 200
-    end
+    context "given a todo in the params" do
+      before do
+        post todos_path, todo: { title: "Refactor: Clean up your code" }
+      end
 
-    it "should create the todo" do
-      post todos_path, todo: { title: "Get the specs to pass" }
-      response.body.should include("Get the specs to pass")
+      it "should be successful" do
+        follow_redirect!
+        response.status.should == 200
+      end
+
+      it "should create the todo" do
+        response.body.should include("Refactor: Clean up your code")
+      end
     end
   end
 end
