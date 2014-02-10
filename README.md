@@ -79,10 +79,8 @@ A repository for lecture notes and gists
 
 [Wednesday, Jan 29, 2014, Afternoon](js_functions/js_functions.md)
 
-[Tuesday, Feb 3, 2014, Afternoon](debugging.md)
-
-[Wednesday, Feb 4, 2014, Afternoon] (action_mailer/ActionMailer.md)
-
 [Wednesday, Feb 3, 1014, Afternoon](debugging.md)
+
+[Thursday, Feb 4, 2014, Afternoon] (action_mailer/ActionMailer.md)
 
 [Monday, Feb 10, 1014, Morning & Afternoon](rails_tdd_intro.md)
