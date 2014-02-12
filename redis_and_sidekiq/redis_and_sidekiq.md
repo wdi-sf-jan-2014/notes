@@ -283,6 +283,9 @@ The important line that we added over the standard unicorn config is below:
 ```
 This tells unicorn to spawn a sidekiq task so that we can have sidekiq running alongside our app.
 
+### Adding RedisToGo
+
+Next go to your heroku account, click on the app you want to add Redis to.  Add the redis to go plugin.  Make sure you pick the free version of the plugin on the left.  You will also need to tell Heroku about your credit card info.  As long as you don't add anything that costs money to your app, you won't be charged.
 
 
 
