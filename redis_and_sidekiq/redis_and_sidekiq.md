@@ -29,6 +29,11 @@ To run the Redis server do:
 ```
 redis-server
 ```
+__OR__ try this command if you need a config file:
+
+```
+redis-server /usr/local/etc/redis.conf
+```
 
 And to interact with Redis in the terminal, run the redis command line interface:
 
