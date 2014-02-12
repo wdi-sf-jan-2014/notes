@@ -16,6 +16,8 @@ gem 'unicorn-rails', :groups => [:development, :test]
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'rails_12factor', group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
