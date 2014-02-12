@@ -102,7 +102,7 @@ rails g model link url:string http_response:integer site:belongs_to --no-test-fr
 Next the models need to know about how they are associated.  In ```app/models/link.rb``` add:
 
 ```
-belons_to :site
+belongs_to :site
 ```
 
 And in ```app/models/site.rb``` add:
