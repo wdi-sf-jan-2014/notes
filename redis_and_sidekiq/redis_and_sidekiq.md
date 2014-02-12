@@ -4,7 +4,7 @@ __Objectives__
 
 * Understand what Redis and Sidekiq are useful for and how they work at a high level
 * Be able to write a Sidekiq worker
-* Deploy Redis and Sidekiq to Heroku using the Unicorn server
+* Use Unicorn as your server
 
 ## What is Redis?
 
