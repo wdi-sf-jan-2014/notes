@@ -1,0 +1,10 @@
+<h1><%= @auction.body %></h1>
+
+<% @auction.bids.each do |bid| %>
+	<div> 
+		Bid: <%= bid.amount %>
+	</div>
+<% end %>
+
+
+
