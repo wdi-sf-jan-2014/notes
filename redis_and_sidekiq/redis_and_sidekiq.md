@@ -294,3 +294,4 @@ This tells unicorn to spawn a sidekiq task so that we can have sidekiq running a
 * [Sidekiq RailsCast](http://railscasts.com/episodes/366-sidekiq)
 * [Sidekiq Wiki](https://github.com/mperham/sidekiq/wiki)
 * [Running Unicorn on Heroku](https://devcenter.heroku.com/articles/rails-unicorn)
+* [Sidetiq](https://github.com/tobiassvn/sidetiq) - Useful for recurring dealyed jobs
