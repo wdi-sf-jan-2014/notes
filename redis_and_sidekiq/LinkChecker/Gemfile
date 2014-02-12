@@ -12,6 +12,8 @@ gem 'typhoeus'
 
 gem 'unicorn'
 
+gem 'sidekiq'
+
 gem 'unicorn-rails', :groups => [:development, :test]
 
 gem 'dotenv-rails', :groups => [:development, :test]
