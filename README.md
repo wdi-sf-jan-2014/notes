@@ -45,6 +45,8 @@ A repository for lecture notes and gists
 
 [Rails TDD Intro](rails_tdd_intro.md)
 
+[Advanced ActiveRecord and to_json] (advanced_activerecord.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -84,3 +86,5 @@ A repository for lecture notes and gists
 [Thursday, Feb 4, 2014, Afternoon] (action_mailer/ActionMailer.md)
 
 [Monday, Feb 10, 1014, Morning & Afternoon](rails_tdd_intro.md)
+
+[Friday, Feb 14, 2014, Morning] (advanced_activerecord.md)
