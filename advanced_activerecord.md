@@ -2,12 +2,12 @@
 
 ###Goals
 
-- Understand the power of Active Record
+- Understand the power (and limitations) of Active Record
 - How to leverage ActiveRecord and to_json for api design
 
 ###Intro
 
-Active Record is a simple object-relational mapping (ORM) framework. ORM: Connecting two worlds that evolved alongside, but hardly talked to each other: RDBMS and OO.
+Recap: Active Record is a simple object-relational mapping (ORM) framework. ORM: Connecting two worlds that evolved alongside: RDBMS and OO.
 
 Up until now, we've covered how to build basic queries using Active Record. After building a handful of projects you should be comfortable making these queries. We'll go over the basics again.
 
