@@ -1,4 +1,3 @@
-
 ##Advanced ActiveRecord
 
 ###Goals
@@ -20,7 +19,7 @@ If you're used to using raw SQL to find database records, then you will generall
 
 **Active Record insulates you from the need to use SQL in most cases.**
 
-**An ActiveRecord object represent a row in a tabel**
+**An ActiveRecord object represent a row in a database table**
 
 ###Today's demo system
 
