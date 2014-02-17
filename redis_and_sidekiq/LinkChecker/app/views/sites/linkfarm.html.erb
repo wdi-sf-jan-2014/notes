@@ -1,0 +1,24 @@
+<h3>My Link Farm</h3>
+
+<table>
+	<tr>
+    <th>Link</th>
+    <th>Comment</th>
+  </tr>
+  <tr>
+    <% url = 'https://www.yahoo.com' %>
+  	<td><%= link_to url, url %></td><td>A Search Engine</td>
+  </tr>
+  <tr>
+  	<% url = 'https://www.google.com' %>
+  	<td><%= link_to url, url %></td><td>Another Search Engine</td>
+  </tr>
+  <tr>
+  	<% url = 'https://www.amazon.com/testing/testing/testing' %>
+  	<td><%= link_to url, url %></td><td>A Made Up GA URL</td>
+  </tr>
+  <tr>
+  	<% url = 'https://www.google.com/mysite/that/doesnt/exist' %>
+  	<td><%= link_to url, url %></td><td>A Search Engine with a bad link</td>
+  </tr>
+</table>

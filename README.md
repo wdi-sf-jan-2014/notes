@@ -45,6 +45,8 @@ A repository for lecture notes and gists
 
 [Rails TDD Intro](rails_tdd_intro.md)
 
+[Advanced ActiveRecord and to_json] (advanced_activerecord.md)
+
 [JavaScript BDD](js_bdd/README.md)
 
 ### By date
@@ -87,5 +89,6 @@ A repository for lecture notes and gists
 
 [Monday, Feb 10, 1014, Morning & Afternoon](rails_tdd_intro.md)
 
-[Mon, Feb 17, 2014, Morning](js_bdd/README.md)
+[Friday, Feb 14, 2014, Morning] (advanced_activerecord.md)
 
+[Monday, Feb 17, 2014, Morning](js_bdd/README.md)
