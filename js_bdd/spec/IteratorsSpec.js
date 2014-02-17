@@ -39,7 +39,7 @@ describe("Iterators", function() {
         // From that point, see if you could figure out how to abstract that out 
         // to the more general case, to check whether map applies *any* function
         // to each element to return the result array 
-        pending();  
+        pending();
       });
       it("does not modify the original array at all", function() {
         pending();
