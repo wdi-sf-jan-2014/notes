@@ -7,6 +7,8 @@
 
 ## Good JS vs. Bad JS
 
+[JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
+
 ### Why you should care:
 
 #### Less bugs
@@ -31,8 +33,6 @@ Bad js is at times *very* hard to debug
 ### All of the above is hard to keep track of manually
 
 ### Use a tool: JSHint
-
-[JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 
 [About JSHint](http://www.jshint.com/about/)
 
