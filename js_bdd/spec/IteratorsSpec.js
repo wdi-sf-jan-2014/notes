@@ -22,7 +22,8 @@ describe("Iterators", function() {
   describe(".map", function() {
     describe("given a null", function() {
       it("returns null", function() {
-        pending();
+        // first, get this example to pass
+        expect(Iterators.map(null)).toBeNull();
       });
     });
     describe("given an array and an action as input", function() {
@@ -30,7 +31,15 @@ describe("Iterators", function() {
         pending();
       });
       it("returned array has results of the action applied to each element of the input array", function() {
-        pending();
+        // For this one, imagine that you have an input array like
+        // [1,2,3]. Think about how you'd expect the result of applying
+        // a function like function (el) { return el * 2; } to be used
+        // to construct the result array.
+
+        // From that point, see if you could figure out how to abstract that out 
+        // to the more general case, to check whether map applies *any* function
+        // to each element to return the result array 
+        pending();  
       });
       it("does not modify the original array at all", function() {
         pending();
