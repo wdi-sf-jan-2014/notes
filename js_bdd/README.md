@@ -80,6 +80,8 @@ A test suite begins with `describe`, with two parameters:
 
 [Iterators Test Suite](spec/IteratorsSpec.js)
 
+#### Exercise: Complete the test suite and implementation
+
 ## Your resources for today:
 
 * [Jasmine Intro](http://jasmine.github.io/2.0/introduction.html)
