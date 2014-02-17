@@ -18,7 +18,7 @@ Bad js is at times *very* hard to debug
 #### Maintainable code
 
 * Don't leave unused variables dangling in the wind
-* Don't assign crap to variables that are undefined
+* Don't use a variable without defining it first with the `var` keyword
 * Don't use `==` when you should use `===`
 * Don't make two libraries override each others' functionality by putting crap in global scope
 * Keep your cyclomatic complexity down to a minimum
