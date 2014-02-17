@@ -62,8 +62,6 @@ If you have Sublime Text 3, enable Automatically linting on edit or save
 
 ### Together: name some reasons why we should test our code
 
-### WARNING: Don't watch the Jasmine Railscast yet! 
-
 ### Basic Jasmine syntax
 
 #### It's like RSpec, but with JS
@@ -77,4 +75,6 @@ A test suite begins with `describe`, with two parameters:
 * A `string` giving the test suite a name
 * An anonymous `function` that implements the test suite
 
-#### Together: Let's take a look at a suite that I had written
+#### Together: Let's take a look at a test suite that I had written
+
+[Iterators Test Suite](spec/IteratorsSpec.js)
