@@ -45,6 +45,8 @@ A repository for lecture notes and gists
 
 [Rails TDD Intro](rails_tdd_intro.md)
 
+[JavaScript BDD](js_bdd/README.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -84,3 +86,6 @@ A repository for lecture notes and gists
 [Thursday, Feb 4, 2014, Afternoon] (action_mailer/ActionMailer.md)
 
 [Monday, Feb 10, 1014, Morning & Afternoon](rails_tdd_intro.md)
+
+[Mon, Feb 17, 2014, Morning](js_bdd/README.md)
+
