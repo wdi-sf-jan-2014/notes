@@ -54,7 +54,8 @@ Forllow the Simple section of the installation instructions here: [Sublime Packa
 Follow the Sublime Package Manager section of the instructions here:
 [JSHint Gutter Installation Instructions](https://sublime.wbond.net/packages/JSHint%20Gutter)
 
-If you have Sublime Text 3, enable Automatically linting on edit or save
+* **If you have Sublime Text 3:**, enable Automatically linting on edit or save
+* **If you have Sublime Text 2**, enable Automatically linting on save
 
 #### Exercise: Write some js code in Sublime and play with JSHint
 
