@@ -37,4 +37,10 @@ describe("Iterators", function() {
       });
     });
   });
+
+  describe(".reduce", function() {
+    it(" ** does not have examples, so write them ** ", function() {
+      pending();
+    });
+  });
 });
