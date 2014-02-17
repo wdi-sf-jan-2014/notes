@@ -57,3 +57,24 @@ Follow the Sublime Package Manager section of the instructions here:
 If you have Sublime Text 3, enable Automatically linting on edit or save
 
 #### Exercise: Write some js code in Sublime and play with JSHint
+
+## JS BDD Testing with Jasmine
+
+### Together: name some reasons why we should test our code
+
+### WARNING: Don't watch the Jasmine Railscast yet! 
+
+### Basic Jasmine syntax
+
+#### It's like RSpec, but with JS
+
+In RSpec, what 2 arguments do the `describe`, `it` methods take?
+
+Like in RSpec with ruby, in Jasmine with JS, which is based on RSpec, `describe` and `it` are `functions` that are applied to/take two arguments. With RSpec, the second argument is a block; with Jasmine, the second argument is an anonymous `function`.
+
+A test suite begins with `describe`, with two parameters:
+
+* A `string` giving the test suite a name
+* An anonymous `function` that implements the test suite
+
+#### Together: Let's take a look at a suite that I had written
