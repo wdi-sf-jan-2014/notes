@@ -202,6 +202,7 @@ The same origin policy is important to understand when making ajax requests.  It
 
 JSONP is a hacky way of circumventing the same origin policy.  It uses a script tag that is dynamically added to the page as a work around to making a request to a different origin.  The server that receives the request must know that the request is JSONP and it must wrap the result in a callback method that is defined by the caller.  Check the resources section for more reading.
 
+
 ## Resources
 
 [jQuery AJAX api Reference](http://api.jquery.com/jQuery.ajax/)
@@ -209,6 +210,9 @@ JSONP is a hacky way of circumventing the same origin policy.  It uses a script 
 [Same Origin Policy](http://en.wikipedia.org/wiki/Same-origin_policy)
 
 [JSONP](http://en.wikipedia.org/wiki/JSONP)
+
+## Lab
+[Link Checker AJAX Lab](https://github.com/wdi-sf-jan-2014/LinkCheckerWithAJAX)
 
 
 
