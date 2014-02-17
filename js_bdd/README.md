@@ -75,6 +75,12 @@ A test suite begins with `describe`, with two parameters:
 * A `string` giving the test suite a name
 * An anonymous `function` that implements the test suite
 
-#### Together: Let's take a look at a test suite that I had written
+#### Together: Let's take a look at a test suite that I had begun to write
 
 [Iterators Test Suite](spec/IteratorsSpec.js)
+
+## Your resources for today:
+
+* [Jasmine Intro](http://jasmine.github.io/2.0/introduction.html)
+* [Testing with Jasmine Screencast](http://blog.codeship.io/2013/07/30/testing-tuesday-16-javascript-testing-with-jasmine.html)
+* [Jasmine Spies Screencast](http://blog.codeship.io/2013/08/06/testing-tuesday-17-how-to-spy-on-javascript-methods-with-jasmine.html)
