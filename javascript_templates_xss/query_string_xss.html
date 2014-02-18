@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Query String XSS</title>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <style>
+    span {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>A Simple XSS Attack (fixed!)</h1>
+  <h2>This page puts the contents of the "name" parameter into the elements.</h2>
+  <h3>Value set with $(q).html: <span id="name1"></span></h3>
+  <h3>Value set with $(q).text: <span id="name2"></span></h3>
+  <h3>Value set with $(q)[0].innerHTML: <span id="name3"></span></h3>
+  <h3>Value set with $(q)[0].textContent: <span id="name4"></span></h3>
+
+    <script> 
+    var query = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=');
+            if (p.length != 2) continue;
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'))
+
+    // XSS successfully executed using jQuery
+    $("#name1").html(query["name"]);
+
+    // XSS not executed with jQuery
+    $("#name2").text(query["name"]);
+
+    // Prevented by Chrome's Reflective XSS filter (this is not robust)
+    $("#name3")[0].innerHTML=query["name"];
+
+    // XSS not executed
+    $("#name4")[0].textContent=query["name"];
+  </script>
+</body>
+</html>

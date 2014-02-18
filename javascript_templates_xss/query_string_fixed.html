@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Query String XSS</title>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="handlebars.js"></script>
+  <script id="inline-template" type="text/x-handlebars-template">
+      <p>This is an inline template in a script tag, {{name}}<p>
+  </script>
+  <script type="text/javascript" src="compiled-name.js"></script>
+  <style>
+    span {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>A Simple XSS Attack</h1>
+  <h2>This page puts the contents of the "name" parameter into the elements.</h2>
+  <h3>Value set with the result of Handlebars.compile on a template in a script tag: <span id="name1"></span></h3>
+  <h3>Value set with the result of Handlebars.compile on a template in a string: <span id="name2"></span></h3>
+  <h3>Value set with the result of using a precompiled template: <span id="name3"></span></h3>
+
+    <script> 
+    var query = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=');
+            if (p.length != 2) continue;
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'));
+
+    var source   = $("#inline-template").html();
+    var script_tag_template = Handlebars.compile(source);
+
+    var inline_string_template = Handlebars.compile("<p>This is a template in a string, {{name}}<p>");
+
+    var remote_template = Handlebars.templates.name;
+
+    $("#name1").html(script_tag_template(query));
+    $("#name2").html(inline_string_template(query));
+    $("#name3").html(remote_template(query));
+  </script>
+</body>
+</html>

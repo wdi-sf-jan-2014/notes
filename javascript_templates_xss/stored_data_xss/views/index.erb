@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stored Data XSS</title>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"> </script>
+</head>
+<body>
+<h1> <%= @data[:name] %>'s profile page</h1>
+<p>Rails has the image_tag helper to prevent this attack from happening:</p>
+<p>Avatar: <img src="<%=@data[:avatar_url]%>"></p>
+
+</body>
+</html>
