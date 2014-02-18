@@ -2,11 +2,11 @@
 
 ## Agenda
 
-* #### Clarify updating pull requests
-* #### An XSS example
-* #### Templates in JS/HTML
-* #### Templates in Rails/JS
-* #### A Note on sharing templates
+* Clarify updating pull requests
+* An XSS example
+* Templates in JS/HTML
+* Templates in Rails/JS
+* A Note on sharing templates
 
 ## Updating pull requests
 Commit and push, it will smoothly update your pull request.  
