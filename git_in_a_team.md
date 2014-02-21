@@ -78,10 +78,16 @@ It's not enough to commit to following the workflow.  You must also stay aware o
 
 ## Resources:
 How Github uses Github:
-http://zachholman.com/talk/how-github-uses-github-to-build-github/
+[http://zachholman.com/talk/how-github-uses-github-to-build-github/](http://zachholman.com/talk/how-github-uses-github-to-build-github/)
 
 The Pro Git book:
 [http://git-scm.com/book/](http://git-scm.com/book/)
 
 An example git workflow for a project with a running production server:
 [http://nvie.com/posts/a-successful-git-branching-model/](http://nvie.com/posts/a-successful-git-branching-model/)
+
+A complex git workflow for an open source application:
+[https://wiki.diasporafoundation.org/Git_workflow](https://wiki.diasporafoundation.org/Git_workflow)
+
+A simpler git workflow for an open source application:
+[https://github.com/NancyFx/Nancy/wiki/Git-Workflow](https://github.com/NancyFx/Nancy/wiki/Git-Workflow)
