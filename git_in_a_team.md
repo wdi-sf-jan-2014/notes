@@ -77,6 +77,9 @@ We will have one central repository which one group member will own.  Everyone e
 It's not enough to commit to following the workflow.  You must also stay aware of the current state of your repository so that when you make mistakes, you can recover.  Use `git status` constantly.  
 
 ## Resources:
+Here is a diagram which is similar to our workflow:
+[http://inliner.cluster02.s.memonic.ch/d9/d9c3289e-7ea8-4c32-99f9-d90744e16a13/integration_manager_workflow.png](http://inliner.cluster02.s.memonic.ch/d9/d9c3289e-7ea8-4c32-99f9-d90744e16a13/integration_manager_workflow.png)
+
 How Github uses Github:
 [http://zachholman.com/talk/how-github-uses-github-to-build-github/](http://zachholman.com/talk/how-github-uses-github-to-build-github/)
 
