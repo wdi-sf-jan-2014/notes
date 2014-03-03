@@ -46,4 +46,11 @@ Take 5 minutes and in groups of 4-5 people write as many things as possible that
 
 ## Introduce lab for the rest of the day
 
-Using the backbone.js docs and the basic knowledge you have gained from this lesson, build a view hierarchy for the Todos example, which we had discussed. Use underscore.js templates for rendering views, or handlebars templates. The choice is up to you, but you'll need to do some research on how to combine handlebars with backbone.js.
+* Fork and clone [Spa App repo](https://github.com/wdi-sf-jan-2014/todo_spa), if you don't already have it
+* `git fetch` from there and switch to the `with_backbone` branch
+* Start the rails server
+* [Run the specs](http://localhost:3000/specs)
+* Refactor by moving the event handling functionality into the Backbone view
+* Consider whether you need to create individual subviews
+* Come up with functionality of your own to start building and build the views with Backbone.View
+
