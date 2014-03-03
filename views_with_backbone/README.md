@@ -42,8 +42,6 @@ Take 5 minutes and in groups of 4-5 people write as many things as possible that
 ### `render` function
 ### `events` hash
 
-## Backbone templates with underscore - 5 minutes
-
 ## Introduce lab for the rest of the day
 
 * Fork and clone [Spa App repo](https://github.com/wdi-sf-jan-2014/todo_spa), if you don't already have it
