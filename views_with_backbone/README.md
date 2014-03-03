@@ -46,9 +46,11 @@ Take 5 minutes and in groups of 4-5 people write as many things as possible that
 
 * Fork and clone [Spa App repo](https://github.com/wdi-sf-jan-2014/todo_spa), if you don't already have it
 * `git fetch` from there and switch to the `with_backbone` branch
-* Start the rails server
-* [Run the specs](http://localhost:3000/specs)
+* Start the jasmine server by running `rake jasmine`
+* [Run the specs](http://localhost:8888)
+* You should have some specs passing, and some failing
 * Refactor by moving the event handling functionality into the Backbone view
 * Consider whether you need to create individual subviews
-* Come up with functionality of your own to start building and build the views with Backbone.View
+* Come up with new functionality of your own and build the views with Backbone.View
+	* If you do this, see if you can write some specs for the new views/functionality
 
