@@ -1,6 +1,8 @@
 # The Backbone Router
 
-# Agenda
+### Our objective is to use Backbone Router to make multi-view client side apps which work smoothly with the browser and user.
+
+## Agenda
 
 * Review the Backbone View
 * Look at some examples of client side apps
