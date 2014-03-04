@@ -49,6 +49,7 @@ App.Views.Index = Backbone.View.extend({
 
 App.Views.Other = Backbone.View.extend({
   tagname: "div",
+  
   render: function(){
     var text = "Other Route";
     if(this.model){
@@ -76,7 +77,5 @@ App.Views.Nav = Backbone.View.extend({
 });
 
 $(function(){
-  // this code obviously belongs in a model or collection
-  // but, we're not talking about models or collections just yet :)
   App.start();
 });
