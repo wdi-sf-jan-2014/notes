@@ -18,6 +18,7 @@ Using the blog app, start the rails server, go to the root path and open up the 
 5. Change the default author of the post to 'Tim' (have to change javascript in the app).  Create a new empty post model and verify that the author is set to Tim.
 6. Get a single post from the server.  __HINT__ Set a urlRoot on the model.
 7. Make a change to the post and save it back to the server.
+8. Convert the model to a simple json object that represents the data and then log that information to the console.
 
 ## Collections
 A backbone collection stores a set of models.  It provides functionality to operate on the models and keep the models in sync with the server.
