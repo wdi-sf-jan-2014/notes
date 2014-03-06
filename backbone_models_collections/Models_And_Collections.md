@@ -36,6 +36,13 @@ Again using the javascript console and the BlogApp, complete the following tasks
 ## Model And Collection Events
 Models and collections trigger events when data is altered.  It is possible for your views to listen to events on the model like add, change, reset, etc and then call the appropriate callback functions.
 
+### Exercise - Backbone Collection Events
+
+1. Look at ```app/assets/javascripts/views/post_test_view.js```.  Add code to the view that logs some message to the console every time an post is added to the posts collection.  Next, create a new view in the console, then add data to the collection. __Hint__ use the listenTo method on the view.
+2. Write a similar method for the reset event, and trigger it somehow.
+3. Write a similar method for the remove event, and trigger it somehow.
+4. When exactly do these events get triggered in a collection?  Which events does ```fetch``` trigger?
+
 
 ## Resources
 
