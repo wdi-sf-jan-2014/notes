@@ -51,6 +51,8 @@ A repository for lecture notes and gists
 
 [Views with Backbone](views_with_backbone/README.md)
 
+[Regex](regex/README.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -96,3 +98,5 @@ A repository for lecture notes and gists
 [Monday, Feb 17, 2014, Morning](js_bdd/README.md)
 
 [Monday, Mar 1, 2014, Morning](views_with_backbone/README.md)
+
+[Tuesday, Mar 4, 2014, Morning](regex/README.md)
