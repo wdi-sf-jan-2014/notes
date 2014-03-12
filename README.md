@@ -53,6 +53,8 @@ A repository for lecture notes and gists
 
 [Regex](regex/README.md)
 
+[CoffeeScript](coffeescript/README.md)
+
 ### By date
 
 [Monday, Jan 6, 2014, Afternoon](living_in_the_command_line.md)
@@ -100,3 +102,5 @@ A repository for lecture notes and gists
 [Monday, Mar 1, 2014, Morning](views_with_backbone/README.md)
 
 [Tuesday, Mar 4, 2014, Morning](regex/README.md)
+
+[Tuesday, Mar 11, 2014, Morning](coffeescript/README.md)
