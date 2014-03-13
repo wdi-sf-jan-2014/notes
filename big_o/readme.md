@@ -36,6 +36,8 @@ For a loop which chooses a section of the input, then focuses in on that section
 * To Index or not to Index? (tree vs list)
 * Should this be a hash or an array?
 * Should some data be cached?
+* What should we optimize?
+* How should we write our SQL/ActiveRecord queries?
 
 ### Some Complexity Classes:
 * O(1) - Constant time
@@ -48,19 +50,26 @@ For a loop which chooses a section of the input, then focuses in on that section
 
 * O(N) - For each ....
    * Sum an array
+   * Find the max of an unsorted array
 
 * O(NlogN) - Divide and pick a section for every piece of input
-   * Sorting with quicksort, merge sort, or other optimized sort.
+   * Sorting with quicksort, merge sort, or other sort reasonably fast sort.
 
 * O(N^2) - For each piece of data, look at the data you haven't looked at yet (the rest of the list)
-   * Insertion sort
-         
+   * Insertion Sort
+   * Selection Sort
+   * Bubble Sort
+   * List all pairs in a dataset
+   * Dijkstra's algorithm without a priority queue
+   
 * O(N^3)
 	* Naive Matrix Multiplication
    * Drawing a graph with force layout
+   * Floyd-Warshall all pair shortest path
 
 * O(c^n) - One new piece of data doubles the work is 2^n.
-  * Playing chess: looking one more move ahead multiplies the work
+  * Playing chess or another game: looking one more move ahead multiplies the work by the number of possible moves.
+  * The travelling salesman problem can be solved in O(n^2*2^n)
 
 * O(n!) - List all combinations of a set, every possible subset.  Impossibly slow and hardly ever needed.
   * Naive travelling salesman
