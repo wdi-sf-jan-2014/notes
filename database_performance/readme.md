@@ -94,7 +94,7 @@ Then some code in the view:
 
 This will create 1 query which gets all the user's groups, then N queries, one for each group, which get the users of that group.
 
-Instead, we use a Rails helper which gets all the users of all the groups in one query, then attaches them to the group objects.
+Instead, we use the Rails __eager loading__ helper, which gets all the users of all the groups in one query, then attaches them to the group objects.
 
 ```
 @groups = current_user.groups.includes(:members)
@@ -109,6 +109,7 @@ Your application cannot handle loading millions of ActiveRecord objects from the
 ### Other Database features to look into:
 * Foreign key constraints: If there is a column `user_id` in the `posts` table, a foreign key constraint can prevent you from doing anything which would result in a row in `posts` having a value in `user_id` without a corresponding row in `users`.
 * Common Table Expressions in Postgres: CTEs are a great way to extract tree-like data from the database.  It's like recursive search, but Postgres does it internally.
+* Activerecord-import and similar techniques are good for loading large amount of data into a Rails app.  See data.rake in the lab for an example.
 
 ## Resources
 * [Migrations in Rails](http://api.rubyonrails.org/classes/ActiveRecord/Migration.html)
