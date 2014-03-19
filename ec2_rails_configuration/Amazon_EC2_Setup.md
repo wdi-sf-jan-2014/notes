@@ -40,7 +40,11 @@ sudo gem install sqlite3
 sudo apt-get install postgresql
 sudo apt-get install libpq-dev
 sudo gem install pg
+```
 
+In a production environment, you should have a password for your database. In the following setup, you can add a password for the ubuntu user.
+
+```
 sudo -u postgres createuser --superuser $USER
 sudo -u postgres psql postgres
 
@@ -53,10 +57,10 @@ Make changes to /etc/postgresql/9.1/main/pg_hba.conf (authetification methods). 
 
 ```
 *Edit this line*
-host    all         all       127.0.0.1/32       md5
+host	all		 all	   127.0.0.1/32	   md5
 
 *To look like this*
-host    all         all       127.0.0.1/32       trust
+host	all		 all	   127.0.0.1/32	   trust
 ```
 Now restart postgres to pick up the configuration change:
 
@@ -145,27 +149,27 @@ Copy the following configuration into the newly created file:
 
 ```
 upstream myblog {
-        server  127.0.0.1:3000;
+		server  127.0.0.1:3000;
 }
 server {
-        listen  80;
-        server_name     ec2-x-x-x-x.compute-1.amazonaws.com;
-        access_log      /var/www/blog/log/access.log;
-        error_log       /var/www/blog/log/error.log;
-        root            /var/www/blog/public;
-        index           index.html;
+		listen  80;
+		server_name	 ec2-x-x-x-x.compute-1.amazonaws.com;
+		access_log	  /var/www/blog/log/access.log;
+		error_log	   /var/www/blog/log/error.log;
+		root			/var/www/blog/public;
+		index		   index.html;
 
-        location / {
-                proxy_set_header  X-Real-IP  $remote_addr;
-                proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header  Host $http_host;
-                proxy_redirect  off;
-                try_files /system/maintenance.html $uri $uri/index.html $uri.html @ruby;
-        }
+		location / {
+				proxy_set_header  X-Real-IP  $remote_addr;
+				proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_set_header  Host $http_host;
+				proxy_redirect  off;
+				try_files /system/maintenance.html $uri $uri/index.html $uri.html @ruby;
+		}
 
-        location @ruby {
-                proxy_pass http://myblog;
-        }
+		location @ruby {
+				proxy_pass http://myblog;
+		}
 }
 ```
 
@@ -215,7 +219,7 @@ ps aux | grep rails
 which might return a line that looks something like this:
 
 ```
-ubuntu   23174  0.0  7.1 195556 43428 ?        Sl   16:20   0:00 /usr/bin/ruby1.9.1 script/rails
+ubuntu   23174  0.0  7.1 195556 43428 ?		Sl   16:20   0:00 /usr/bin/ruby1.9.1 script/rails
 ```
 
 The number right after ubuntu (23174) is your server process id.  To end it,
@@ -234,6 +238,29 @@ cd /var/www
 git clone <project repo>
 ```
 You will most likely have a production branch that should be checked out and used in a production deployment.  The steps after this point are largely similar.  Just replace the blog app with your own app.
+
+### secrets.yml
+
+Rails 4.1 introduces a screts.yml file.  Since many of you are likely on 4.0.  We'll stick with using the ```.env``` file for now.  For future versions, setting your secrets in a secrets.yml is the way to go.
+
+### dotenv-rails
+Up until now we have not included dotenv-rails in production.  Since we no longer have heroku to push our configs to, we will use dotenv-rails in the production group as well.
+
+
+__Copying the .env File EC2__
+
+The following command will copy the 
+
+```
+scp -i ~/.pem-file/myinstance.pem ./.env ubuntu@exx-xx-xx-xx-xx.compute-1.amazonaws.com:
+```
+
+Next, ssh to the host and change the permissions for the file:
+
+```
+chmod 600 .env
+```
+
 
 #####Exercise
 
