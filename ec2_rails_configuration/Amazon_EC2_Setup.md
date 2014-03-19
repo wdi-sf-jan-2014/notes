@@ -53,7 +53,7 @@ sudo -u postgres psql postgres
 createdb $USER
 ```
 
-Make changes to /etc/postgresql/9.1/main/pg_hba.conf (authetification methods).  Scroll all the way to the bottom and look under the line that mentions IPV4.  
+Make changes to /etc/postgresql/9.1/main/pg_hba.conf (authetification methods) using the following command: ```sudo vim /etc/postgresql/9.1/main/pg_hba.conf```.  Scroll all the way to the bottom and look under the line that mentions IPV4.  
 
 ```
 *Edit this line*
@@ -74,6 +74,7 @@ sudo service postgresql restart
 cd /var
 mkdir www
 sudo chown ubuntu:ubuntu www
+cd www/
 
 rails new blog -d postgresql
 rails g controller Blog index --no-test-framework
