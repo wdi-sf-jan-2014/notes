@@ -224,6 +224,21 @@ The number right after ubuntu (23174) is your server process id.  To end it,
 sudo kill -9 23174
 ```
 
+## Deploying an Existing Application
+
+The process for deploying an existing application is very similar to the steps above.  The main difference is that the app needs to be cloned from the git repo into EC2.
+
+```
+sudo apt-get install git
+cd /var/www
+git clone <project repo>
+```
+You will most likely have a production branch that should be checked out and used in a production deployment.  The steps after this point are largely similar.  Just replace the blog app with your own app.
+
+## Capistrano
+
+Capistrano helps automate the deployment process.  The process described above contains some manual steps that are error prone.  Instead, you can let capistrano manage the deployment for you and keep track of versioning.
+
 
 
 ------
@@ -239,3 +254,10 @@ sudo kill -9 23174
 #####NginX
 - [http://kvz.io/blog/2010/09/21/ruby-with-nginx-on-ubuntu-lucid/](http://kvz.io/blog/2010/09/21/ruby-with-nginx-on-ubuntu-lucid/)
 - [https://www.digitalocean.com/community/articles/how-to-install-rails-and-nginx-with-passenger-on-ubuntu](https://www.digitalocean.com/community/articles/how-to-install-rails-and-nginx-with-passenger-on-ubuntu)
+
+#####Capistrano
+* [Capistrano Documentation](http://capistranorb.com/)
+* [Beanstalk Guide on Deploying with Capistrano](http://guides.beanstalkapp.com/deployments/deploy-with-capistrano.html)
+* [Rails 4 Capistrano Deployment Steps](http://robmclarty.com/blog/how-to-deploy-a-rails-4-app-with-git-and-capistrano)
+
+
