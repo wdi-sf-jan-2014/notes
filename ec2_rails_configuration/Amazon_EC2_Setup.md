@@ -235,6 +235,10 @@ git clone <project repo>
 ```
 You will most likely have a production branch that should be checked out and used in a production deployment.  The steps after this point are largely similar.  Just replace the blog app with your own app.
 
+#####Exercise
+
+Clone a repo from an existing project.  Get it working on EC2.
+
 ## Capistrano
 
 Capistrano helps automate the deployment process.  The process described above contains some manual steps that are error prone.  Instead, you can let capistrano manage the deployment for you and keep track of versioning.
