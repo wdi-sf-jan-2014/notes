@@ -72,7 +72,7 @@ sudo service postgresql restart
 
 ```
 cd /var
-mkdir www
+sudo mkdir www
 sudo chown ubuntu:ubuntu www
 cd www/
 
@@ -94,7 +94,7 @@ Also, you must create the database for production in postgres
 
 ```
 psql
-create database blog_production
+create database blog_production;
 \q
 ```
 
