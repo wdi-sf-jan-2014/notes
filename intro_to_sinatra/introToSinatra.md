@@ -38,34 +38,33 @@
 ### Just a little File-Server
 ---
 
-Webrick is a simple HTTP and HTTPS server in ruby. You'll see it a lot and it can help motivate looking at the `request` and `response` cycle.
+Webrick is a simple HTTP and HTTPS server in Ruby. You'll see it a lot and looking at it now will help you understand the `request` and `response` cycle.
 
-With just a few lines of code we can start up a server to  server the files in a directory.
+With just a few lines of code we can start up a server to serve the files in a directory.
   
-  require 'webrick'
-  
-  root = File.expand_path '.'
-  server = WEBrick::HTTPServer.new :Port => 8000, :DocumentRoot => root
-  trap "INT" do server.shutdown; end
-  server.start
+    require 'webrick'
+    
+    root = File.expand_path '.'
+    server = WEBrick::HTTPServer.new :Port => 8000, :DocumentRoot => root
+    trap "INT" do server.shutdown; end
+    server.start
   
 Hmmm... But what does this mean?
 
+    require 'webrick'
 
-  require 'webrick'
-
-  # File.expand_path just gets 
-  # the absolute path for a given 
-  # relative path, i.e. "." (the current directory)
-  root = File.expand_path '.'
-  
-  # Sets the server to respond to localhost:8000
-  # and servers the file specified as root
-  server = WEBrick::HTTPServer.new :Port => 8000, :DocumentRoot => root
-  
-  # Needed to start and stop the server
-  trap "INT" do server.shutdown; end
-  server.start
+    # File.expand_path just gets 
+    # the absolute path for a given 
+    # relative path, i.e. "." (the current directory)
+    root = File.expand_path '.'
+    
+    # Sets the server to respond to localhost:8000
+    # and servers the file specified as root
+    server = WEBrick::HTTPServer.new :Port => 8000, :DocumentRoot => root
+    
+    # Needed to start and stop the server
+    trap "INT" do server.shutdown; end
+    server.start
 
 In your terminal try the following,
   
